@@ -63,34 +63,91 @@
                   
                 <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingOne">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <h4 class="panel-title">
-                        
-                          Collapsible Group Item #1
-                      </h4>
-                        </a>
+                      
+                          <div class="single-event">
+                            <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
+                            <div class="right">
+                                <h3>Programming Contest</h3>
+                                <a class="btn btn-success" href="participate.php">Register</a>
+                                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="btn btn-success">Show Teams</a>
+                            </div>
+                        </div>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                       <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        
+                        <table class="table table-striped">
+                            <tr>
+                                <td>SL</td>
+                                <td>Teame Name</td>
+                                <td>Institution Name</td>
+                                <td>Status</td>
+                                <td>Details</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>Black Dragon</td>
+                                <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
+                                <td class="accepted text-center"><p>Accepted</p></td>
+                                <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                            </tr>
+                        </table>
+
+
                       </div>
                     </div>
                   </div>
                   <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingTwo">
-                      <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Collapsible Group Item #2
-                        </a>
-                      </h4>
+                      <div class="single-event">
+                            <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
+                            <div class="right">
+                                <h3>Programming Contest</h3>
+                                <a class="btn btn-success" href="participate.php">Register</a>
+                                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne" class="btn btn-success">Show Teams</a>
+                            </div>
+                        </div>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                       <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                        <table class="table table-striped">
+                            <tr>
+                                <td>SL</td>
+                                <td>Teame Name</td>
+                                <td>Institution Name</td>
+                                <td class="text-center">Status</td>
+                                <td>Details</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>Black Dragon</td>
+                                <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
+                                <td class="accepted text-center"><p>Rejecte</p></td>
+                                <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>Black Dragon</td>
+                                <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
+                                <td class="rejected text-center"><p>Rejected</p></td>
+                                <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>Black Dragon</td>
+                                <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
+                                <td class="pending text-center"><p>Pending</p></td>
+                                <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                            </tr>
+                        </table>
+
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
             </div>
         </div>
