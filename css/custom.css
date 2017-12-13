@@ -1,0 +1,63 @@
+body {
+  font-family: 'Cabin', sans-serif;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+#counter {
+  color: #ffffff;
+}
+
+#counter_wrapper {
+  margin: 1.3em 0px 1em;
+}
+.countdown-period {
+  display: block;
+  font-size: 60%;
+}
+.countdown-amount {
+  display: block;
+  font-size: 200%;
+}
+.countdown-section {
+  display: inline-block;
+  margin-right: 8%;
+}
+.countdown-section:last-child {
+  margin-right: 0px;
+}
+
+nav.navbar {
+    margin: 0;
+    background: black;
+    border-radius: 0;
+    color: white;
+}
+
+nav.navbar {
+    margin: 0;
+    background: black;
+    border-radius: 0;
+    color: white;
+}
+a.navbar-brand {
+    color: white;font-weight: bold;
+}
+li>a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.poster-image {
+    width: 60%;
+    padding: 35px 0px;
+}
+.event-counter {
+    background: rgb(27, 117, 186);
+    margin-bottom: 20px;
+}
