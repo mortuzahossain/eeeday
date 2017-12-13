@@ -1,7 +1,7 @@
 body {
   font-family: 'Cabin', sans-serif;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -31,7 +31,9 @@ body {
 .countdown-section:last-child {
   margin-right: 0px;
 }
-
+.event-counter h1{
+color: #fff;
+}
 nav.navbar {
     margin: 0;
     background: black;
@@ -60,4 +62,64 @@ li>a {
 .event-counter {
     background: rgb(27, 117, 186);
     margin-bottom: 20px;
+}
+
+.block {
+    padding: 40px 0;
+    color: #000;
+    margin: 20px 0;
+}
+.block img:hover{
+      box-shadow: 0px 1px 16px 8px;
+}
+.block img{
+   width:100%;max-width:400px;
+}
+.block p {
+    text-align: justify;
+    line-height: 23px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.block-1 {
+    background: #3a4aa6;
+    color: white;
+}
+.social-link{
+  margin: 20px 0;
+  padding: 20px 0;
+}
+.fa {
+    font-size: 30px;
+}
+
+.copyright.text-center {
+    color: black;
+    padding: 20px 0;
+    color: white;
+    background: #3a4aa6;
+}
+
+.developer.text-center {
+    color: black;
+    padding: 9px;
+}
+.copyright p{
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.navbar-toggle {
+    border: 1px solid rgb(234, 37, 37);
+}
+@media (min-width: 768px)
+{
+  .modal-dialog {
+      width: 780px;
+      margin: 30px auto;
+  }
+}
+
+a {
+    cursor: pointer;
 }
