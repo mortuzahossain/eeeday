@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 #counter {
   color: #ffffff;
 }
@@ -16,156 +17,195 @@ body {
 #counter_wrapper {
   margin: 1.3em 0px 1em;
 }
+
 .countdown-period {
   display: block;
   font-size: 60%;
 }
+
 .countdown-amount {
   display: block;
   font-size: 200%;
 }
+
 .countdown-section {
   display: inline-block;
   margin-right: 8%;
 }
+
 .countdown-section:last-child {
   margin-right: 0px;
 }
-.event-counter h1{
-color: #fff;
-}
-nav.navbar {
-    margin: 0;
-    background: black;
-    border-radius: 0;
-    color: white;
+
+.event-counter h1 {
+  color: #fff;
 }
 
 nav.navbar {
-    margin: 0;
-    background: black;
-    border-radius: 0;
-    color: white;
+  margin: 0;
+  background: black;
+  border-radius: 0;
+  color: white;
 }
+
+nav.navbar {
+  margin: 0;
+  background: black;
+  border-radius: 0;
+  color: white;
+}
+
 a.navbar-brand {
-    color: white;font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
+
 li>a {
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
 .poster-image {
-    width: 60%;
-    padding: 35px 0px;
+  width: 60%;
+  padding: 35px 0px;
 }
+
 .event-counter {
-    background: rgb(27, 117, 186);
-    margin-bottom: 20px;
+  background: rgb(27, 117, 186);
+  margin-bottom: 20px;
 }
 
 .block {
-    padding: 40px 0;
-    color: #000;
-    margin: 20px 0;
+  padding: 40px 0;
+  color: #000;
+  margin: 20px 0;
 }
-.block img:hover{
-      box-shadow: 0px 1px 16px 8px;
+
+.block img:hover {
+  box-shadow: 0px 1px 16px 8px;
 }
-.block img{
-   width:100%;max-width:400px;
+
+.block img {
+  width: 100%;
+  max-width: 400px;
 }
+
 .block p {
-    text-align: justify;
-    line-height: 23px;
-    font-size: 18px;
-    margin-top: 20px;
+  text-align: justify;
+  line-height: 23px;
+  font-size: 18px;
+  margin-top: 20px;
 }
+
 .block-1 {
-    background: #3a4aa6;
-    color: white;
+  background: #3a4aa6;
+  color: white;
 }
-.social-link{
+
+.social-link {
   margin: 20px 0;
   padding: 20px 0;
 }
+
 .fa {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .copyright.text-center {
-    color: black;
-    padding: 20px 0;
-    color: white;
-    background: #3a4aa6;
+  color: black;
+  padding: 20px 0;
+  color: white;
+  background: #3a4aa6;
 }
 
 .developer.text-center {
-    color: black;
-    padding: 9px;
+  color: black;
+  padding: 9px;
 }
-.copyright p{
-    font-size: 16px;
-    margin-bottom: 0;
+
+.copyright p {
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
 .navbar-toggle {
-    border: 1px solid rgb(234, 37, 37);
+  border: 1px solid rgb(234, 37, 37);
 }
-@media (min-width: 768px)
-{
+
+@media (min-width:768px) {
   .modal-dialog {
-      width: 780px;
-      margin: 30px auto;
+    width: 780px;
+    margin: 30px auto;
   }
+
 }
 
 a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.single-event img{
+.single-event img {
   width: 370px;
 }
-.right{
+
+.right {
   float: right;
-    margin: 5px 0;
-    padding-right: 30px;
+  margin: 5px 0;
+  padding-right: 30px;
 }
 
 .btn-success {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .single-event {
-    border: 2px solid #000;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 5px;
+  border: 2px solid #000;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
 }
-.contact-detail p{
+
+.contact-detail p {
   margin: 0;
   padding: 0;
 }
+
 .contact-detail h3 {
-    margin: 4px;
-    margin-top: 10px;
-    margin-bottom: 14px;
-	border-radius: 5px;
+  margin: 4px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  border-radius: 5px;
 }
 
-.single-contact img{
+.registerinevent {
+    background: rgb(131, 150, 255);
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    margin-bottom: 46px;
+}
+.single-contact img {
   height: 135px;
   width: 135px;
-	float:left;
+  float: left;
 }
 
 .single-contact {
-height:150px;
-    margin-bottom: 5px;
-    padding-bottom: 8px;
-    border-top: 2px solid;
-    border-radius: 5%;
-    padding-top: 6px;
-    border-bottom: 2px solid;
+  height: 150px;
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+  border-top: 2px solid;
+  border-radius: 5%;
+  padding-top: 6px;
+  border-bottom: 2px solid;
+}
+
+.heading {
+  font-size: 40px;
+  margin-bottom: 40px
+}
+
+.form-control:focus {
+    border-color: #ff0404;
 }

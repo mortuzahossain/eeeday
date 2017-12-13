@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Avion - Simple Landing Page</title>
+    <title>EEE DAY 2018</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,11 +31,11 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 ">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a data-toggle="modal" data-target="#ourevents">Events</a></li>
-                    <li><a href="file/schedule/techhunt_2017_schedule_v1.pdf">Schedule</a></li>
-                    <li><a href="#">Teams</a></li>
-                    <li><a href="file/schedule/techhunt_2017_schedule_v1.pdf">Results</a></li>
+                    <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Schedule</a></li>
+                    <li><a href="teams.php">Teams</a></li>
+                    <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Results</a></li>
                     <li><a href="#">Sponsors</a></li>
                     <li><a data-toggle="modal" data-target="#contact-us" href="#">Contact</a></li>
                 </ul>        
@@ -115,7 +115,7 @@
     </div>
 
     <div class="copyright text-center">
-        <p>All &copy; Recieved by EEE BAUST </p>
+        <p>All &copy; Received by EEE BAUST </p>
     </div>
     
 
@@ -133,8 +133,8 @@
             <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
             <div class="right">
                 <h3>Programming Contest</h3>
-                <a class="btn btn-success" href="#">Register</a>
-                <a class="btn btn-success" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
+                <a class="btn btn-success" href="participate.php">Register</a>
+                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
             </div>
         </div>
         
@@ -142,8 +142,8 @@
             <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
             <div class="right">
                 <h3>Programming Contest</h3>
-                <a class="btn btn-success" href="#">Register</a>
-                <a class="btn btn-success" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
+                <a class="btn btn-success" href="participate.php">Register</a>
+                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
             </div>
         </div>
         
