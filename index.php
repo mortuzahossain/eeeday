@@ -36,7 +36,7 @@
                     <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Schedule</a></li>
                     <li><a href="teams.php">Teams</a></li>
                     <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Results</a></li>
-                    <li><a href="#">Sponsors</a></li>
+                    <li><a href="sponsors.php">Sponsors</a></li>
                     <li><a data-toggle="modal" data-target="#contact-us" href="#">Contact</a></li>
                 </ul>        
             </div><!-- /.navbar-collapse -->
@@ -213,10 +213,12 @@
     <script type="text/javascript" src="js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-
+    <script src="js/newsTicker.js"></script>
     <script type="text/javascript">
       
       $(document).ready(function(){
+
+
         $("#counter").countdown({
         until: new Date(2018, 1 - 1, 23),
         format: 'dHMS'
