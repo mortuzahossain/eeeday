@@ -220,39 +220,56 @@ a {
   padding: 1px 14px;
 }
 
-.accepted p{
+.accepted p {
   margin: auto;
   border: 2px solid green;
   border-radius: 15px 0;
 }
 
-.rejected p{
+.rejected p {
   margin: auto;
   border: 2px solid red;
   border-radius: 15px 0;
 }
 
-.pending p{
+.pending p {
   margin: auto;
   border: 2px solid blue;
   border-radius: 15px 0;
 }
 
 h1.text-center.header1 {
-    text-transform: uppercase;
-    border-bottom: 2px white dashed;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    color: white;
+  text-transform: uppercase;
+  border-bottom: 2px white dashed;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .sponsor-img {
-    height: 200px;
-    width: 250px;
-    padding: 10px;
-    margin: 15px;
+  height: 200px;
+  width: 250px;
+  padding: 10px;
+  margin: 15px;
 }
 
 img.sponsor-img:hover {
-    box-shadow: 1px 1px 20px 6px white;
+  box-shadow: 1px 1px 20px 6px white;
+}
+
+marquee {
+  background: #1b75ba;
+  color: white;
+  padding: 1px 30px;
+  margin: 0;
+}
+
+marquee >a {
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+marquee >a:hover {
+  color: #ec0404;
 }

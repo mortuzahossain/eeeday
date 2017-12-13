@@ -44,6 +44,9 @@
     </nav>
 
 
+
+
+
     <div class="poster">
         <div class="container">
             <div class="row">
@@ -164,7 +167,7 @@
         <h4 class="modal-title">Contact With Us</h4>
       </div>
       <div class="modal-body">
-
+    <p><marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">Need to change your team info then <a href="#">mail me</a>.</marquee></p>
         <div class="single-contact text-center">
             <img src="img/contact/AlMehdiSaadatChowdhury2.jpg" alt="">
             <div class="contact-detail">
@@ -213,7 +216,6 @@
     <script type="text/javascript" src="js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <script src="js/newsTicker.js"></script>
     <script type="text/javascript">
       
       $(document).ready(function(){
