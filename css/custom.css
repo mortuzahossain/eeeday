@@ -147,16 +147,21 @@ a {
   margin: 0;
   padding: 0;
 }
-.contact-detail h3{
-      margin: 4px;
+.contact-detail h3 {
+    margin: 4px;
+    margin-top: 10px;
+    margin-bottom: 14px;
+	border-radius: 5px;
 }
 
 .single-contact img{
-  height: 150px;
-  width: 150px;
+  height: 135px;
+  width: 135px;
+	float:left;
 }
 
-.single-contact.text-center {
+.single-contact {
+height:150px;
     margin-bottom: 5px;
     padding-bottom: 8px;
     border-top: 2px solid;

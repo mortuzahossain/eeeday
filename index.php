@@ -33,9 +33,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
                     <li><a data-toggle="modal" data-target="#ourevents">Events</a></li>
-                    <li><a href="#">Schedule</a></li>
+                    <li><a href="file/schedule/techhunt_2017_schedule_v1.pdf">Schedule</a></li>
                     <li><a href="#">Teams</a></li>
-                    <li><a href="#">Results</a></li>
+                    <li><a href="file/schedule/techhunt_2017_schedule_v1.pdf">Results</a></li>
                     <li><a href="#">Sponsors</a></li>
                     <li><a data-toggle="modal" data-target="#contact-us" href="#">Contact</a></li>
                 </ul>        
@@ -129,6 +129,15 @@
       </div>
       <div class="modal-body">
 
+        <div class="single-event">
+            <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
+            <div class="right">
+                <h3>Programming Contest</h3>
+                <a class="btn btn-success" href="#">Register</a>
+                <a class="btn btn-success" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
+            </div>
+        </div>
+        
         <div class="single-event">
             <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
             <div class="right">
