@@ -107,7 +107,7 @@
 </div>
 
 
-    <a href="#0" class="cd-top">Top</a>
+    <a href="#0" class="cd-top animated infinite pulse">Top</a>
 
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -128,7 +128,7 @@
         format: 'dHMS'
         });
 
-        $("#counter_wrapper").fitText(1.2, {
+        $("#counter_wrapper").fitText(1.4, {
         minFontSize: '20px',
         maxFontSize: '50px'
         });

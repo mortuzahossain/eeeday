@@ -8,6 +8,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/menu.css">
     <link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/totop.css">
     <title>EEE Day</title>
 </head>
@@ -28,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center title-logo">
-                    <img class="poster-image" src="img/eee_day.png" alt="Title Logo">
+                    <img class="poster-image animated infinite pulse" src="img/eee_day.png" alt="Title Logo">
                 </div>
             </div>
         </div>
