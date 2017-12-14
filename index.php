@@ -8,7 +8,7 @@
           <div class="row">
             <div class="col-md-12">
               <div id="counter_wrapper">
-                <h1 class="text-center">Event Counter</h1>
+                <h1 class="text-center">Starting At</h1>
                 <div class="text-center" id="counter"></div>
               </div>
             </div>
