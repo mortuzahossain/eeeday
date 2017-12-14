@@ -31,6 +31,14 @@
                         <input type="email" class="form-control" placeholder="Email" name="email">
                       </div>
                       <div class="form-group">
+                        <label for="exampleInputEmail1">Alternative Email address</label>
+                        <input type="email" class="form-control" placeholder="Email" name="altemail">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Phone</label>
+                        <input type="number" class="form-control" placeholder="Phone" name="phone">
+                      </div>
+                      <div class="form-group">
                         <label for="exampleInputPassword1">Team Leader</label>
                         <input type="text" class="form-control" placeholder="Enter Name" name="leadername">
                       </div>

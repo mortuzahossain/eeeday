@@ -107,7 +107,7 @@
 </div>
 
 
-    
+    <a href="#0" class="cd-top">Top</a>
 
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -117,6 +117,7 @@
     <!-- jquery countdown -->
     <script type="text/javascript" src="js/jquery.plugin.js"></script> 
     <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script type="text/javascript" src="js/backtotop.js"></script>
     <script type="text/javascript">
       
       $(document).ready(function(){
