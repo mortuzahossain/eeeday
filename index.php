@@ -1,4 +1,7 @@
-<?php include 'inc/header.php'; ?>
+<?php
+    include 'inc/header.php';
+?>
+
 
     <div class="event-counter">
         <div class="container">

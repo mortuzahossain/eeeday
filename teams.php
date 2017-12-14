@@ -1,5 +1,7 @@
 <?php
     include 'inc/header.php';
+    include 'inc/dbconfig.php';
+    $db = new Database();
 ?>
     
     <div class="registerinevent">
@@ -23,7 +25,7 @@
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                       <div class="panel-body">
-                        
+                                               
                         <table class="table table-striped">
                             <tr>
                                 <td>SL</td>
