@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang='en'>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +12,14 @@
     <link href="css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/totop.css">
+    <link rel="stylesheet" href="css/form-elements.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-queries.css">
     <title>EEE Day</title>
 </head>
+
 <body>
+
     <div id='cssmenu'>
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -35,4 +41,3 @@
             </div>
         </div>
     </div>
-

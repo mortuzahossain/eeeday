@@ -109,15 +109,14 @@
 
     <a href="#0" class="cd-top animated infinite pulse">Top</a>
 
-    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.fittext.js"></script>
     <script src="js/scripts.js"></script>
-
-    <!-- jquery countdown -->
-    <script type="text/javascript" src="js/jquery.plugin.js"></script> 
-    <script type="text/javascript" src="js/jquery.countdown.js"></script>
-    <script type="text/javascript" src="js/backtotop.js"></script>
+    <script src="js/jquery.plugin.js"></script> 
+    <script src="js/jquery.countdown.js"></script>
+    <script src="js/backtotop.js"></script>
+    
     <script type="text/javascript">
       
       $(document).ready(function(){
