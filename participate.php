@@ -10,7 +10,7 @@
                         Register
                     </h2>  
 
-                    <form>
+                    <form action="" method="post">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Event Name</label>
                         <select class="form-control" required="1" name="event-name">
@@ -18,10 +18,18 @@
                             <option value="fifa">FIFA</option>
                         </select>
                       </div>
+
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Team Name</label>
-                        <input type="text" class="form-control" placeholder="Team Name" name="team-name">
+                        <label for="exampleInputEmail1">Participation Type</label>
+                        <select class="form-control" required="1" name="event-name" onchange="selInput()" id="ptype">
+                            <option value="1">Single</option>
+                            <option value="2">Team</option>
+                        </select>
                       </div>
+
+                        <div id="output"></div>
+
+                      
                       <div class="form-group">
                         <label for="exampleInputEmail1">Instutute Name</label>
                         <input type="text" class="form-control" placeholder="Instutute Name" name="instutute-name">
@@ -50,12 +58,44 @@
                         <label for="exampleInputPassword1">Member 2 </label><span>(optional)</span> 
                         <input type="text" class="form-control" placeholder="Enter Name" name="member2">
                       </div>
-                      <button type="submit" class="btn btn-success" style="float: right;">Submit</button>
+                      <button type="submit" class="btn btn-success" style="float: right;" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+<?php
+    
+    if(isset($_POST['submit'])){
+        if (isset($_POST['team-name'])) {
+            $team_name = $_POST['team-name'];
+            echo $team_name;   
+        }
+    }
+
+?>
+
+
+<script type="text/javascript">
+    function selInput() {
+
+        var e = document.getElementById("ptype");
+        var type = e.options[e.selectedIndex].value;
+        console.log(type);
+
+        var opt = document.getElementById("output");
+
+        var single = 'Single';
+        var team = '<div class="form-group"><label for="exampleInputEmail1">Team Name</label><input type="text" class="form-control" placeholder="Team Name" name="team-name">';
+
+        if (type == 2) {
+            opt.innerHTML = team;
+        }
+
+    }
+    selInput();
+</script>
 
 
 <?php
