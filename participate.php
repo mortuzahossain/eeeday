@@ -12,7 +12,7 @@
 
                     <form action="" method="post">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Event Name</label>
+                        <label>Event Name</label>
                         <select class="form-control" required="1" name="event-name">
                             <option value="matlab">Matlab Contest</option>
                             <option value="fifa">FIFA</option>
@@ -27,13 +27,38 @@
                         </select>
                       </div>
 
-                        <div id="output"></div>
+                      <div id="output"></div>
+                    
+                    <div class="form-group">
+                        <label>Participance Name</label>
+                        <input type="text" class="form-control" placeholder="Your Name" name="participance_name">
+                    </div>
 
-                      
-                      <div class="form-group">
+                                        
+                    <div class="form-group">
+                        <label>Participance Roll</label>
+                        <input type="text" class="form-control" placeholder="Roll No" name="participance_roll">
+                    </div>    
+
+                    <div class="form-group">
+                        <label>Participance Depertment</label>
+                        <input type="text" class="form-control" placeholder="Depertment" name="participance_dept">
+                    </div>
+
+                    <div class="form-group">
                         <label for="exampleInputEmail1">Instutute Name</label>
                         <input type="text" class="form-control" placeholder="Instutute Name" name="instutute-name">
-                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Participance Email</label>
+                        <input type="email" class="form-control" placeholder="Your Name" name="participance_email">
+                    </div>
+
+
+                      
+
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" placeholder="Email" name="email">
@@ -86,8 +111,12 @@
 
         var opt = document.getElementById("output");
 
-        var single = 'Single';
-        var team = '<div class="form-group"><label for="exampleInputEmail1">Team Name</label><input type="text" class="form-control" placeholder="Team Name" name="team-name">';
+        var single = '';
+        var team = '';
+
+        if (type == 1) {
+            opt.innerHTML = single;
+        }
 
         if (type == 2) {
             opt.innerHTML = team;
