@@ -8,7 +8,7 @@
 
         include 'inc/conn.php';
 
-        $sql = 'SELECT * FROM sponsors2018';
+        $sql = 'SELECT * FROM event2018';
         $result = mysqli_query($con,$sql);
 
         if($result){
