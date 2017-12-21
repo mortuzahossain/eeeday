@@ -11,10 +11,10 @@ class Database
     
     // Getting the constent value
 
-    public $host    = database;
-    public $user    = dbname;
-    public $pass    = user;
-    public $dbname  = pass;
+    public $host    = host;
+    public $user    = user;
+    public $pass    = pass;
+    public $dbname  = dbname;
 
     public $link;
     public $error;

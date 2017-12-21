@@ -23,6 +23,7 @@
     </div>
     
 
+<!-- Model Data For Events -->
 
 
 <div class="modal fade" tabindex="-1" role="dialog" id="ourevents">
@@ -34,23 +35,47 @@
       </div>
       <div class="modal-body">
 
-        <div class="single-event">
-            <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
-            <div class="right">
-                <h3>Programming Contest</h3>
-                <a class="btn btn-success" href="participate.php">Register</a>
-                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
-            </div>
-        </div>
-        
-        <div class="single-event">
-            <img src="img/event/Techhunt2017_Gaming_Contest_COD4 cover.png" alt="">
-            <div class="right">
-                <h3>Programming Contest</h3>
-                <a class="btn btn-success" href="participate.php">Register</a>
-                <a class="btn btn-success" target="_blank" href="file/event/techhunt_programming_2017_v5.pdf">Event Details</a>
-            </div>
-        </div>
+        <?php
+
+            $sql = 'SELECT * FROM event2018';
+            $result = mysqli_query($con,$sql);
+
+            if($result){
+                $have_data = mysqli_num_rows($result);
+                if($have_data){
+                    while($row = mysqli_fetch_assoc($result)){
+                        $alldata[] = $row;
+                    }
+
+                    // populate dynamic data in front end
+
+                    foreach ($alldata as $single_model) {
+                    ?>
+
+                    <div class="single-event">
+                        <img src="<?php echo $single_model['promoimg']; ?>" alt="<?php echo $single_model['events']; ?>">
+                        <div class="right">
+                            <h3><?php echo $single_model['events']; ?></h3>
+                            <?php if ($single_model['reg_active'] == 1) { ?>
+                            <a class="btn btn-success" href="participate.php">Register</a>
+                            <?php } ?>
+                            <a class="btn btn-success" target="_blank" href="<?php echo $single_model['pdflink'] ?>">Event Details</a>
+                        </div>
+                    </div>
+
+                    <?php
+                    }
+
+                } else {
+                    echo 'No data available to show.';
+                }
+            } else {
+                echo 'Problem in Database';
+            }
+
+
+
+        ?>
         
 
      </div>

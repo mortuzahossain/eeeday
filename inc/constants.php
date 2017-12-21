@@ -1,9 +1,9 @@
 <?php
 
-define('database', 'localhost');
+define('host', 'localhost');
 define('dbname', 'eeeday');
 
 define('user', 'root');
-define('pass', '123456');
+define('pass', '1234');
 
 

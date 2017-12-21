@@ -1,5 +1,11 @@
+<?php
+    //include 'inc/header.php';
+    include 'inc/dbconfig.php';
 
-<?php include 'inc/header.php'; ?>
+    $query = "SELECT * FROM event2018";
+
+    exit();
+?>
 
 <div class="registerinevent">
 

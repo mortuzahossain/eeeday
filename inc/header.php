@@ -1,3 +1,6 @@
+<?php
+    include 'inc/conn.php';
+?>
 <!doctype html>
 <html lang='en'>
 
