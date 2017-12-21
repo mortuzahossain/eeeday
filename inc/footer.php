@@ -95,36 +95,44 @@
       </div>
       <div class="modal-body">
     <p><marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">Need to change your team info then <a href="#">mail me</a>.</marquee></p>
-        <div class="single-contact text-center">
-            <img src="img/contact/AlMehdiSaadatChowdhury2.jpg" alt="">
-            <div class="contact-detail">
-                <h3>Name</h3>
-                <p>Designation</p>
-                <p>Phone</p>
-                <p>Email</p>
+
+    <?php
+
+    $sql_contact = 'SELECT * FROM contact2018';
+    $contact_result = mysqli_query($con,$sql_contact);
+
+    if($contact_result){
+        $have_data = mysqli_num_rows($contact_result);
+        if($have_data){
+            while($row = mysqli_fetch_assoc($contact_result)){
+                $contacts[] = $row;
+            }
+
+            // populate dynamic data in front end
+
+            foreach ($contacts as $single_contact) {
+            ?>
+
+            <div class="single-contact text-center">
+                <img src="<?php echo $single_contact['image']; ?>" alt="<?php echo $single_contact['name']; ?>">
+                <div class="contact-detail">
+                    <h3><?php echo $single_contact['name']; ?></h3>
+                    <p><?php echo $single_contact['designation']; ?></p>
+                    <p><?php echo $single_contact['phone']; ?></p>
+                    <p><?php echo $single_contact['email']; ?></p>
+                </div>
             </div>
-        </div>
-        
-        <div class="single-contact text-center">
-            <img src="img/contact/AlMehdiSaadatChowdhury2.jpg" alt="">
-            <div class="contact-detail">
-                <h3>Name</h3>
-                <p>Designation</p>
-                <p>Phone</p>
-                <p>Email</p>
-            </div>
-        </div>
-        
-        <div class="single-contact text-center">
-            <img src="img/contact/AlMehdiSaadatChowdhury2.jpg" alt="">
-            <div class="contact-detail">
-                <h3>Name</h3>
-                <p>Designation</p>
-                <p>Phone</p>
-                <p>Email</p>
-            </div>
-        </div>
-        
+            
+            <?php
+                    }
+
+                } else {
+                    echo 'No data available to show.';
+                }
+            } else {
+                echo 'Problem in Database';
+            }
+        ?>
 
      </div>
     </div><!-- /.modal-content -->

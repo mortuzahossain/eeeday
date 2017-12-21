@@ -1,7 +1,5 @@
 <?php
     include 'inc/header.php';
-    include 'inc/dbconfig.php';
-    $db = new Database();
 ?>
     
     <div class="registerinevent">
