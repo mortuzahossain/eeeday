@@ -44,17 +44,13 @@
                         <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
 
-                                <table class="table table-striped">
-                                    <tr>
-                                        <td>SL</td>
-                                        <td>Teame Name</td>
-                                        <td>Institution Name</td>
-                                        <td>Status</td>
-                                        <td>Details</td>
-                                    </tr>
+<!-- For Single -->
+
 <?php
 
-    $sql = 'SELECT * FROM event2018';
+    $slug = $single_event['slug'];
+
+    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 1" ;
     $result = mysqli_query($con,$sql);
 
     if($result){
@@ -63,12 +59,26 @@
             while($row = mysqli_fetch_assoc($result)){
                 $participance[] = $row;
             }
+            
+            ?>
+            <h3>Single</h3>
+
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>SL</td>
+                                    <td>Teame Name</td>
+                                    <td>Institution Name</td>
+                                    <td>Status</td>
+                                    <td>Details</td>
+                                </tr>           
+            <?php
+            $serial_no = 0;
             foreach ($participance as $single_particippance) {
-                $i++;
+                $serial_no++;
             ?>
 
                                     <tr>
-                                        <td>01</td>
+                                        <td><?php echo $serial_no; ?></td>
                                         <td>Black Dragon</td>
                                         <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
                                         <td class="accepted text-center">
@@ -81,6 +91,11 @@
             <?php
             }
 
+            ?>
+            
+                                </table>
+            <?php
+
         } else {
             echo 'No data available to show.';
         }
@@ -90,8 +105,68 @@
 
 ?>
 
+<!-- For Team -->
 
+<?php
+
+    $slug = $single_event['slug'];
+
+    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 0" ;
+    $result = mysqli_query($con,$sql);
+
+    if($result){
+        $have_data = mysqli_num_rows($result);
+        if($have_data){
+            while($row = mysqli_fetch_assoc($result)){
+                $participance[] = $row;
+            }
+            
+            ?>
+            <h3>Team</h3>
+
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>SL</td>
+                                    <td>Teame Name</td>
+                                    <td>Institution Name</td>
+                                    <td>Status</td>
+                                    <td>Details</td>
+                                </tr>           
+            <?php
+            $serial_no = 0;
+            foreach ($participance as $single_particippance) {
+                $serial_no++;
+            ?>
+
+                                    <tr>
+                                        <td><?php echo $serial_no; ?></td>
+                                        <td>Black Dragon</td>
+                                        <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
+                                        <td class="accepted text-center">
+                                            <p>Accepted</p>
+                                        </td>
+                                        <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                                    </tr>
+
+
+            <?php
+            }
+
+            ?>
+            
                                 </table>
+            <?php
+
+        } else {
+            echo 'No Team available to show.';
+        }
+    } else {
+        echo 'Problem in Database';
+    }
+
+?>
+
+
 
 
                             </div>
