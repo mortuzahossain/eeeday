@@ -1,70 +1,107 @@
 <?php
-    //include 'inc/header.php';
-    include 'inc/dbconfig.php';
-
-    $query = "SELECT * FROM event2018";
-
-    exit();
+    include 'inc/header.php';
 ?>
 
-<div class="registerinevent">
+    <div class="registerinevent">
 
-    <div class="container ">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
 
-                <h2 class="text-center heading">
-                    Register
-                </h2>
+                    <h2 class="text-center heading">
+                        Register
+                    </h2>
 
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label>Event Name</label>
-                        <select class="form-control" required="1" name="event-name">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Event Name</label>
+                            <select class="form-control" required="1" name="event-name" onchange="eventType()">
                             <option value="matlab">Matlab Contest</option>
                             <option value="fifa">FIFA</option>
                         </select>
-                    </div>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Participation Type</label>
-                        <select class="form-control" required="1" name="event-name" onchange="selInput()" id="ptype">
-                            <option value="1">Single</option>
-                            <option value="2">Team</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Participation Type</label>
+                            <select class="form-control" required="1" name="event-name" onchange="setUserInputType()" id="ptype">
+                                <option value="1">Single</option>
+                                <option value="2">Team</option>
+                            </select>
+                        </div>
 
-                    <div id="output"></div>
-
-
+                        <div id="output"></div>
 
 
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Your Name" name="participance_name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Roll</label>
+                            <input type="text" class="form-control" placeholder="Roll No" name="participance_roll">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text" class="form-control" placeholder="Depertment" name="participance_dept">
+                        </div>
 
-                    <div class="form-group">
-                        <label>Participance Email</label>
-                        <input type="email" class="form-control" placeholder="Your Name" name="participance_email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Alternative Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" name="altemail">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Phone</label>
-                        <input type="number" class="form-control" placeholder="Phone" name="phone">
-                    </div>
-                    <button type="submit" class="btn btn-success" style="float: right;" name="submit">Submit</button>
-                </form>
+
+                        <!-- Address Part -->
+
+                        <h3 class="text-center">Address Info</h3>
+
+                        <div class="form-group">
+                            <label>Institute Name</label>
+                            <input type="text" class="form-control" placeholder="Instutute Name" name="instutute-name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="demo@gmail.com" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Alternative Email Address</label>
+                            <input type="email" class="form-control" placeholder="demo1@gmail.com" name="altemail">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="phone" class="form-control" placeholder="01000000000" name="phone">
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label>Alternative Phone</label>
+                            <input type="phone" class="form-control" placeholder="01000000000" name="altphone">
+                        </div>
+
+                        <!-- Payment Information -->
+                        
+                        <h3 class="text-center">Payment Info</h3>
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Transaction Type</label>
+                            <select class="form-control" required="1" name="event-name" onchange="changeTransaction()" id="ttypr">
+                                <option value="1">Bkash</option>
+                                <option value="2">Bank Draft</option>
+                            </select>
+                        </div>
+
+                        <div id="transactionopt"></div>
+
+                        <button type="submit" class="btn btn-success" style="float: right;" name="submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script type="text/javascript">
-        function selInput() {
+        
+        /*function selInput() {
 
             var e = document.getElementById("ptype");
             var type = e.options[e.selectedIndex].value;
@@ -72,7 +109,8 @@
 
             var opt = document.getElementById("output");
 
-            var single = '<div class="form-group"><label>Participance Name</label><input type="text" class="form-control" placeholder="Your Name" name="participance_name"></div><div class="form-group"><label>Participance Roll</label><input type="text" class="form-control" placeholder="Roll No" name="participance_roll"></div><div class="form-group"><label>Participance Depertment</label><input type="text" class="form-control" placeholder="Depertment" name="participance_dept"></div><div class="form-group"><label>Instutute Name</label><input type="text" class="form-control" placeholder="Instutute Name" name="instutute-name"></div>';
+            var single = '';
+
             var team = '';
 
             if (type == 1) {
@@ -84,10 +122,64 @@
             }
 
         }
-        selInput();
+        selInput();*/
+
+        // For Event Type Selection
+
+        function eventType() {
+
+        }
+
+        eventType();
+
+        // For User Type Selection
+
+        function setUserInputType() {
+            
+            // Selector Input Part
+
+            // For Team Input
+
+            // Generate maximum member input
+
+            // Show in front end
+
+
+        }
+
+        setUserInputType();
+
+
+        // Transaction Type Selection
+
+        function changeTransaction() {
+            // Input part
+
+            var ttype = document.getElementById("ttypr");
+            var selectedttype = ttype.options[ttype.selectedIndex].value;
+            console.log(selectedttype);
+            
+            // Output Part
+
+            var transactionopt = document.getElementById("transactionopt");
+
+            // If Selected value is 1 then show the bkash Transaction Type
+            var number_type = '<div class="form-group"><label>Transaction ID</label><input type="text" class="form-control" placeholder="Transaction ID No" name="transactionid"></div>';
+            if (selectedttype == 1) {
+                transactionopt.innerHTML = number_type;
+            }
+            // If Value is 2 Then let them upload file
+            var image_type = '<div class="form-group"><label>Bank Draft Image</label><input type="file" class="form-control" placeholder="Provide Your Bank Draft Image" name="altphone"></div>';
+            if (selectedttype == 2) {
+                transactionopt.innerHTML = image_type;
+            }
+
+        }
+        changeTransaction();
+
     </script>
 
 
-    <?php
+<?php
     include 'inc/footer.php';
 ?>
