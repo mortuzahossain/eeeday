@@ -108,6 +108,7 @@
         </div>
     </div>
 
+
     <script type="text/javascript">
 
         
@@ -140,9 +141,10 @@
 
         // For User Type Selection
 
-        function setUserInputType(maxteammember) {
+        function setUserInputType() {
             
             // Selector Input Part
+
 
 
             // For Team Input
@@ -154,10 +156,20 @@
             }
             
             // Generate maximum member input
-            
+
+
             // Show in front end
             var optinDiv = document.getElementById("output");
-            var optTeam     = '';
+            
+            var optTeam     = '<div class="form-group"><label>Team Name</label><input type="text" class="form-control" placeholder="Team Name" name="team_name"></div><h4 class="text-center">Team Leader Info</h4><div class="form-group"><label>Name</label><input type="text" class="form-control" placeholder="Name" name="team_leader_name"></div><div class="form-group"><label>Roll</label><input type="text" class="form-control" placeholder="Roll No" name="team_leader_roll"></div><div class="form-group"><label>Department</label><input type="text" class="form-control" placeholder="Depertment" name="team_leader_dept"></div>';
+
+            for (var i = 1; i <= maxteammember; i++) {
+                optTeam += '<h4 class="text-center">Member '+i+ ' Info</h4>';
+                optTeam += '<div class="form-group"><label>Name</label><input type="text" class="form-control" placeholder="Name" name="member'+i+'_name"></div>';
+                optTeam += '<div class="form-group"><label>Roll</label><input type="text" class="form-control" placeholder="Roll No" name="member'+i+'_roll"></div><div class="form-group"><label>Department</label><input type="text" class="form-control" placeholder="Depertment" name="member'+i+'_dept"></div>';
+            }
+
+
             var optSingle   = '<div class="form-group"><label>Name</label><input type="text" class="form-control" placeholder="Your Name" name="participance_name"></div><div class="form-group"><label>Roll</label><input type="text" class="form-control" placeholder="Roll No" name="participance_roll"></div><div class="form-group"><label>Department</label><input type="text" class="form-control" placeholder="Depertment" name="participance_dept"></div>';
 
             document.getElementById("submitbtn").disabled = true;
