@@ -1,7 +1,9 @@
 <?php
     include 'inc/header.php';
 ?>
-
+<script type="text/javascript">
+    var maxteammember = 0;
+</script>
     <div class="registerinevent">
 
         <div class="container ">
@@ -12,41 +14,35 @@
                         Register
                     </h2>
 
+
+
                     <form action="" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Event Name</label>
-                            <select class="form-control" required="1" name="event-name" onchange="eventType()">
-                            <option value="matlab">Matlab Contest</option>
-                            <option value="fifa">FIFA</option>
-                        </select>
-                        </div>
+            <?php 
+                $sql = 'SELECT events , slug FROM event2018 WHERE reg_active = 1';
+                $result = mysqli_query($con,$sql);
+
+                if($result){
+                    $have_data = mysqli_num_rows($result);
+                    if($have_data){
+                        while($row = mysqli_fetch_assoc($result)){
+                            $allslug[] = $row;
+                        }                        
+
+            ?>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Participation Type</label>
-                            <select class="form-control" required="1" name="event-name" onchange="setUserInputType()" id="ptype">
-                                <option value="1">Single</option>
-                                <option value="2">Team</option>
+                            <label>Event Name</label>
+                            <select class="form-control" required="1" name="event-name" onchange="getEvents(this.value);">
+                                <option value="0">Select Event Type</option>
+<?php foreach ($allslug as $slug) { ?>
+                                 <option value="<?php echo $slug['slug'] ; ?>"><?php echo $slug['events'] ; ?></option>
+<?php } ?>
                             </select>
                         </div>
 
+                        <div id="show"></div>
+
                         <div id="output"></div>
-
-
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Your Name" name="participance_name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Roll</label>
-                            <input type="text" class="form-control" placeholder="Roll No" name="participance_roll">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Department</label>
-                            <input type="text" class="form-control" placeholder="Depertment" name="participance_dept">
-                        </div>
-
 
                         <!-- Address Part -->
 
@@ -92,7 +88,20 @@
 
                         <div id="transactionopt"></div>
 
-                        <button type="submit" class="btn btn-success" style="float: right;" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-success" style="float: right;" name="submit" id="submitbtn">Submit</button>
+
+            <?php 
+                } else {
+                        echo 'No data available to show.';
+                    }
+                    
+                } else {
+                    echo 'Problem in Database';
+                }
+
+            ?>
+
+
                     </form>
                 </div>
             </div>
@@ -100,49 +109,70 @@
     </div>
 
     <script type="text/javascript">
+
         
-        /*function selInput() {
+        document.getElementById("submitbtn").disabled = true;
 
-            var e = document.getElementById("ptype");
-            var type = e.options[e.selectedIndex].value;
-            console.log(type);
+        function getEvents(val) {
+            //alert(val);
+            if (val == 0) {
+                var emptyevent = '';
+                var show = document.getElementById("show");
+                show.innerHTML = emptyevent;
 
-            var opt = document.getElementById("output");
+                // Disable the submit button
+                document.getElementById("submitbtn").disabled = true;
 
-            var single = '';
-
-            var team = '';
-
-            if (type == 1) {
-                opt.innerHTML = single;
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "getparticipance.php",
+                    data:'data='+val,
+                    success: function(data){
+                        $("#show").html(data);
+                    }
+                });
+                // Enable the submit btn
+                //document.getElementById("submitbtn").disabled = false;
             }
-
-            if (type == 2) {
-                opt.innerHTML = team;
-            }
-
-        }
-        selInput();*/
-
-        // For Event Type Selection
-
-        function eventType() {
-
         }
 
-        eventType();
 
         // For User Type Selection
 
-        function setUserInputType() {
+        function setUserInputType(maxteammember) {
             
             // Selector Input Part
 
+
             // For Team Input
 
+            var ptype = document.getElementById("ptype");
+            if (ptype) {
+                var ptypeValue = ptype.options[ptype.selectedIndex].value;
+                //console.log(ptypeValue);
+            }
+            
             // Generate maximum member input
-
+            
             // Show in front end
+            var optinDiv = document.getElementById("output");
+            var optTeam     = '';
+            var optSingle   = '<div class="form-group"><label>Name</label><input type="text" class="form-control" placeholder="Your Name" name="participance_name"></div><div class="form-group"><label>Roll</label><input type="text" class="form-control" placeholder="Roll No" name="participance_roll"></div><div class="form-group"><label>Department</label><input type="text" class="form-control" placeholder="Depertment" name="participance_dept"></div>';
+
+            document.getElementById("submitbtn").disabled = true;
+
+            if (ptype && ptypeValue == 0) {
+                optinDiv.innerHTML = '';
+            } else if (ptype && ptypeValue == 1) {
+                // For single
+                optinDiv.innerHTML = optSingle;
+                document.getElementById("submitbtn").disabled = false;
+            } else if (ptype && ptypeValue == 2){
+                // For Team
+                optinDiv.innerHTML = optTeam;
+                document.getElementById("submitbtn").disabled = false;
+            }
 
 
         }
@@ -157,7 +187,7 @@
 
             var ttype = document.getElementById("ttypr");
             var selectedttype = ttype.options[ttype.selectedIndex].value;
-            console.log(selectedttype);
+            //console.log(selectedttype);
             
             // Output Part
 

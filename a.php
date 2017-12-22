@@ -8,7 +8,15 @@
 
         include 'inc/conn.php';
 
-        $sql = 'SELECT * FROM event2018';
+        $data = 'matlabcontest';
+
+        $sql = "SELECT teamon,maxteammember FROM event2018 WHERE slug = '".$data."'";
+
+
+
+       // $sql = 'SELECT teamon,maxteammember FROM event2018 WHERE slug = matlabcontest';
+/*
+
         $result = mysqli_query($con,$sql);
 
         if($result){
@@ -25,6 +33,16 @@
         } else {
             echo 'Problem in Database';
         }
+*/
+
+        $result = mysqli_query($con,$sql)->fetch_assoc();
+        // if ($result) {
+        //     print_r($result);
+        //     echo "Done";
+        // }
+        
+print_r($result);
+
         ?>
 
 
