@@ -13,10 +13,7 @@ if (!empty($_POST["data"])) {
 	if ($result['teamon'] == '1') {
 ?>
 
-<script type="text/javascript">
-	var maxteammember = <?php echo $result['maxteammember']; ?>;
-</script>
-
+<input type="hidden" name="maxteammember" value="<?php echo $result['maxteammember']; ?>">
 <div class="form-group">
     <label for="exampleInputEmail1">Participation Type</label>
     <select class="form-control" required="1" name="event-name" onchange="setUserInputType()" id="ptype">

@@ -144,9 +144,6 @@
         function setUserInputType() {
             
             // Selector Input Part
-
-
-
             // For Team Input
 
             var ptype = document.getElementById("ptype");
