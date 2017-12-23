@@ -132,7 +132,7 @@
                             $file_extention = strtolower(end($file_extention));
 
                             // Allowed File Type
-                            $allowed = array('txt','jpg','zip','pdf','php','png');
+                            $allowed = array('gif','jpg','png');
                             define('ROOTPATH', __DIR__);
 
                             if (in_array($file_extention,$allowed)) {
