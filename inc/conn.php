@@ -6,7 +6,7 @@ $pass    = pass;
 $dbname  = dbname;
 
 $con = mysqli_connect($host,$user,$pass,$dbname);
-define('ROOTPATH', __DIR__);
+
 
 
 
