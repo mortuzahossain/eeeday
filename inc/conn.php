@@ -6,6 +6,15 @@ $pass    = pass;
 $dbname  = dbname;
 
 $con = mysqli_connect($host,$user,$pass,$dbname);
+define('ROOTPATH', __DIR__);
+
+
+
+function validate($value)
+{
+    return $value;
+}
+
 
 // if($con){
 //     echo 'Connection Successfull';

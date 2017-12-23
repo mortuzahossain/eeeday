@@ -30,17 +30,17 @@ if (!empty($_POST["data"])) {
 
 		<div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" placeholder="Your Name" name="participance_name">
+            <input type="text" class="form-control" placeholder="Your Name" name="participance_name" required="1">
         </div>
         
         <div class="form-group">
             <label>Roll</label>
-            <input type="text" class="form-control" placeholder="Roll No" name="participance_roll">
+            <input type="text" class="form-control" placeholder="Roll No" name="participance_roll" required="1">
         </div>
         
         <div class="form-group">
             <label>Department</label>
-            <input type="text" class="form-control" placeholder="Depertment" name="participance_dept">
+            <input type="text" class="form-control" placeholder="Depertment" name="participance_dept" required="1">
         </div>
 
         <script type="text/javascript">
