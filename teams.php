@@ -52,7 +52,6 @@
 
     $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 0 ORDER BY id DESC" ;
     $result = mysqli_query($con,$sql);
-
     if($result){
         $have_data = mysqli_num_rows($result);
         if($have_data){
@@ -94,7 +93,7 @@
                                             <p>Rejected</p>
                                         </td>
                                         <?php } ?>
-                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>" target="_blank" class="btn btn-success mybun">Details</a></td>
+                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>&participationtype=0;" target="_blank" class="btn btn-success mybun">Details</a></td>
                                     </tr>
 
 
@@ -126,7 +125,6 @@
 
     $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 1 ORDER BY id DESC" ;
     $result = mysqli_query($con,$sql);
-
     if($result){
         $have_data = mysqli_num_rows($result);
         if($have_data){
@@ -168,7 +166,7 @@
                                             <p>Rejected</p>
                                         </td>
                                         <?php } ?>
-                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>" target="_blank" class="btn btn-success mybun">Details</a></td>
+                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>&participationtype=1;" target="_blank" class="btn btn-success mybun">Details</a></td>
                                     </tr>
 
 
