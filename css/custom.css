@@ -282,3 +282,7 @@ marquee>a {
 marquee>a:hover {
     color: #ec0404;
 }
+
+.model-header{
+    font-size: 17px;
+}
