@@ -50,7 +50,7 @@
 
     $slug = $single_event['slug'];
 
-    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 1" ;
+    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 0 ORDER BY id DESC" ;
     $result = mysqli_query($con,$sql);
 
     if($result){
@@ -65,11 +65,11 @@
 
                             <table class="table table-striped">
                                 <tr>
-                                    <td>SL</td>
-                                    <td>Teame Name</td>
-                                    <td>Institution Name</td>
-                                    <td>Status</td>
-                                    <td>Details</td>
+                                    <td width="5%">SL</td>
+                                    <td width="35%%">Name</td>
+                                    <td width="40%">Institution Name</td>
+                                    <td width="10%">Status</td>
+                                    <td width="10%">Details</td>
                                 </tr>           
             <?php
             $serial_no = 0;
@@ -78,13 +78,23 @@
             ?>
 
                                     <tr>
-                                        <td><?php echo $serial_no; ?></td>
-                                        <td>Black Dragon</td>
-                                        <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
-                                        <td class="accepted text-center">
+                                        <td width="5%"><?php echo $serial_no; ?></td>
+                                        <td width="35%"><?php echo $single_particippance['name']; ?></td>
+                                        <td width="40%"><?php echo $single_particippance['institute']; ?></td>
+                                        <?php if($single_particippance['status'] == '0'){ ?>
+                                        <td width="10%" class="pending text-center">
+                                            <p>Pending</p>
+                                        </td>
+                                        <?php } elseif ($single_particippance['status'] == '1') { ?>
+                                        <td width="10%" class="accepted text-center">
                                             <p>Accepted</p>
                                         </td>
-                                        <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                                        <?php } else { ?>
+                                        <td width="10%" class="rejected text-center">
+                                            <p>Rejected</p>
+                                        </td>
+                                        <?php } ?>
+                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>" target="_blank" class="btn btn-success mybun">Details</a></td>
                                     </tr>
 
 
@@ -98,13 +108,15 @@
             <?php
 
         } else {
-            echo 'No data available to show.';
+            echo '<p>No Single Participance available to show.</p>';
         }
     } else {
-        echo 'Problem in Database';
+        echo '<p>Problem in Database</p>';
     }
 
 ?>
+
+
 
 <!-- For Team -->
 
@@ -112,7 +124,7 @@
 
     $slug = $single_event['slug'];
 
-    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 0" ;
+    $sql = "SELECT * FROM participance2018 WHERE eventslug = '$slug' AND participationtype = 1 ORDER BY id DESC" ;
     $result = mysqli_query($con,$sql);
 
     if($result){
@@ -127,11 +139,11 @@
 
                             <table class="table table-striped">
                                 <tr>
-                                    <td>SL</td>
-                                    <td>Teame Name</td>
-                                    <td>Institution Name</td>
-                                    <td>Status</td>
-                                    <td>Details</td>
+                                    <td width="5%">SL</td>
+                                    <td width="35%%">Name</td>
+                                    <td width="40%">Institution Name</td>
+                                    <td width="10%">Status</td>
+                                    <td width="10%">Details</td>
                                 </tr>           
             <?php
             $serial_no = 0;
@@ -140,18 +152,29 @@
             ?>
 
                                     <tr>
-                                        <td><?php echo $serial_no; ?></td>
-                                        <td>Black Dragon</td>
-                                        <td>Bangladesh army university of science and technology , Saidpur Cantonment</td>
-                                        <td class="accepted text-center">
+                                        <td width="5%"><?php echo $serial_no; ?></td>
+                                        <td width="35%"><?php echo $single_particippance['teamname']; ?></td>
+                                        <td width="40%"><?php echo $single_particippance['institute']; ?></td>
+                                        <?php if($single_particippance['status'] == '0'){ ?>
+                                        <td width="10%" class="pending text-center">
+                                            <p>Pending</p>
+                                        </td>
+                                        <?php } elseif ($single_particippance['status'] == '1') { ?>
+                                        <td width="10%" class="accepted text-center">
                                             <p>Accepted</p>
                                         </td>
-                                        <td><a href="#" class="btn btn-success mybun">Details</a></td>
+                                        <?php } else { ?>
+                                        <td width="10%" class="rejected text-center">
+                                            <p>Rejected</p>
+                                        </td>
+                                        <?php } ?>
+                                        <td width="10%"><a href="details.php?id=<?php echo $single_particippance['id']; ?>" target="_blank" class="btn btn-success mybun">Details</a></td>
                                     </tr>
 
 
             <?php
             }
+            $participance = [];
 
             ?>
             
@@ -166,8 +189,6 @@
     }
 
 ?>
-
-
 
 
                             </div>
