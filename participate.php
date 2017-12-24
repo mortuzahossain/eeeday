@@ -19,25 +19,40 @@
                 if (isset($_POST['submit'])) {
                     
                     $event_name = $_POST['event_name'];
+                    // Address Part
+                    $instutute_name         = validate($_POST['instutute_name']);
+                    $email                  = validate($_POST['email']);
+                    $altemail               = validate($_POST['altemail']);
+                    $phone                  = validate($_POST['phone']);
+                    $altphone               = validate($_POST['altphone']);
+                    // Payment Part
+                    # if BKSAH then take text type input field
+                    $transection_type = validate($_POST['transection_type']);
+                    if ($transection_type == 1) {
+                        $transactionid = validate($_POST['transactionid']);
+                    }
+                    # If BANK then take the image
+                    if ($transection_type == 2) {
+                        $file = $_FILES['file'];
+                        print_r($file);
+                    }
+
 
                     $sql = "SELECT teamon FROM event2018 WHERE slug = '".$event_name."'";
                     $result = mysqli_query($con,$sql)->fetch_assoc();
                     // If it is for only single member
-                    if ($result['teamon'] == '0') {
-                        $participance_name = $_POST['participance_name'];
-                        $participance_roll = $_POST['participance_roll'];
-                        $participance_dept = $_POST['participance_dept'];
-                    }
-                    // If Have Team On 
-                    if ($result['teamon'] == '1') {
-                        // Posible to participate as single
-                        $maxteammember = $_POST['maxteammember'];
-                        $participation_type = $_POST['participation_type'];
 
+                    if ($result['teamon'] == '0') {
+                        include 'inc/single.php';
+                    }
+
+                    if ($result['teamon'] == '1') {
+
+                        # Type Single 
+                        $participation_type = $_POST['participation_type'];
+                        $maxteammember = $_POST['maxteammember'];
                         if ($participation_type == 1) {
-                            $participance_name = $_POST['participance_name'];
-                            $participance_roll = $_POST['participance_roll'];
-                            $participance_dept = $_POST['participance_dept'];
+                            include 'inc/single.php';
                         }
 
                         else {
@@ -47,151 +62,87 @@
                             $team_leader_name = $_POST['team_leader_name'];
                             $team_leader_roll = $_POST['team_leader_roll'];
                             $team_leader_dept = $_POST['team_leader_dept'];
-                            // Team Member
 
-                            // Generating Name Roll And Depertment
-
-                            for ($generate = 1; $generate <= $maxteammember ; $generate++) { 
-                                $member_name[] =  'member'.$generate.'_name';
-                                $member_roll[] =  'member'.$generate.'_roll';
-                                $member_dept[] =  'member'.$generate.'_dept';
-                            }
-
-                            // Gating the value and save it in array
-
-                            for ($get_member_info = 1; $get_member_info <= $maxteammember ; $get_member_info++) { 
-                                $member_name_value[] = validate($_POST[$member_name[$get_member_info]]);
-                                $member_roll_value[] = validate($_POST[$member_roll[$get_member_info]]);
-                                $member_dept_value[] = validate($_POST[$member_dept[$get_member_info]]);
-                            }
-
-                        }
-
-
-                    }
-
-                    // Address Part
-
-                    $instutute_name         = validate($_POST['instutute_name']);
-                    $email                  = validate($_POST['email']);
-                    $altemail               = validate($_POST['altemail']);
-                    $phone                  = validate($_POST['phone']);
-                    $altphone               = validate($_POST['altphone']);
-
-                    // Payment Part
-                    #which payment method is selected
-
-                    $transection_type = validate($_POST['transection_type']);
-                    # if BKSAH then take text type input field
-                    if ($transection_type == 1) {
-                        $transactionid = validate($_POST['transactionid']);
-                    }
-                    # If BANK then take the image
-
-                    if ($transection_type == 2) {
-                        $file = $_FILES['file'];
-                        print_r($file);
-                    }
-
-
-
-                    // Save In Database
-
-                    if ($result['teamon'] == '0') {
-                        if ($transection_type == 1) {
-                            # Text Value Input
-
-                            $sql = "SELECT id FROM participance2018 WHERE transectionid = '".$transactionid."'";
-                            $check = mysqli_query($con,$sql);
-                            $check = mysqli_num_rows($check);
                             
-                            if ($check) {
-                                echo "Duplicate Transaction ID Please Try again or contact us.";
-                            } else {
+                            // Name Generation
 
-                                $sql = "INSERT INTO participance2018 (eventslug,name,roll,depertment,institute,phone,alternativephone,email,alternativeemail,transectionid) VALUES ('$event_name','$participance_name','$participance_roll','$participance_dept','$instutute_name','$phone','$altphone','$email','$altemail','$transactionid') ";
-                                #var_dump( mysqli_query($con,$insert_qury)) ;
-                                if (mysqli_query($con,$sql)) {
-                                    echo "Your Request have been submit Please wait for approve";
-                                } else {
-                                    echo "Sorry Something Wrong in Database Please try Again";
-                                }
-
+                            for ($k=1; $k <= $maxteammember ; $k++) { 
+                                $member_name[] =  'member'.$k.'_name';
+                                $member_name_db[] =  'member'.$k.'name';
+                                $member_roll[] =  'member'.$k.'_roll';
+                                $member_roll_db[] =  'member'.$k.'roll';
+                                $member_dept[] =  'member'.$k.'_dept';
+                                $member_dept_db[] =  'member'.$k.'dept';
                             }
-                        }
-                        if ($transection_type == 2) {
 
-                            // File Properties
-                            $file_name = $file['name'];
-                            $file_tmp = $file['tmp_name'];
-                            $file_size = $file['size'];
-                            $file_error = $file['error'];
+                            // Value Corrospondent to the name in array
 
-                            // File Extention
-                            $file_extention = explode('.', $file_name);
-                            $file_extention = strtolower(end($file_extention));
+                            for ($i=0; $i < $maxteammember ; $i++) { 
+                                $member_name_value[] = $_POST[$member_name[$i]];
+                                $member_roll_value[] = $_POST[$member_roll[$i]];
+                                $member_dept_value[] = $_POST[$member_dept[$i]];
+                            }
 
-                            // Allowed File Type
-                            $allowed = array('gif','jpg','png');
-                            define('ROOTPATH', __DIR__);
+                            // print_r($member_name_value);
+                            // print_r($member_dept);
+                            // print_r($member_roll);
 
-                            if (in_array($file_extention,$allowed)) {
-                                if ($file_error === 0) {
-                                    if ($file_size <= 100000000) {
-                                        $file_name_new = uniqid('',true). '.' .$file_extention;
-                                        // In Server Where Want to save the file
-                                        $file_destinition = ROOTPATH.'/img/bankrecept/'.$file_name_new;
-                                        //echo $file_destinition;
-                                        echo $file_destinition;
-                                        if (move_uploaded_file($file_tmp, $file_destinition)) {
-                                            # Save Data In Database
-                                            #echo $file_destinition;
+                            // Save Value in Database
 
-                                            $sql = "INSERT INTO participance2018 (eventslug,name,roll,depertment,institute,phone,alternativephone,email,alternativeemail,transectionimg) VALUES ('$event_name','$participance_name','$participance_roll','$participance_dept','$instutute_name','$phone','$altphone','$email','$altemail','$file_name_new') ";
-                                            if (mysqli_query($con,$sql)) {
-                                                echo "Your Request have been submit Please wait for approve";
-                                            } else {
-                                                echo "Sorry Something Wrong in Database Please try Again";
-                                            }
+                            if ($transection_type == 1) {
+                                $sql = "SELECT id FROM participance2018 WHERE transectionid = '".$transactionid."'";
+                                $check = mysqli_query($con,$sql);
+                                $check = mysqli_num_rows($check);
+                                if ($check) {
+                                    // Show Worning
+                                    echo "Duplicate Transaction ID Please Provide Right One . Or Check Charefully.";
+                                } else {
+                                    $sql = "INSERT INTO participance2018
+                                     (eventslug,participationtype,teamname,
+                                     teamleadername,teamleaderroll,teamleaderdept,
+                                     ";
+                                    for ($i=0; $i < $maxteammember; $i++) { 
+                                        $sql .= $member_name_db[$i].', ';
+                                        $sql .= $member_roll_db[$i].', ';
+                                        $sql .= $member_dept_db[$i].', ';
+                                    }
+                                     $sql .= "
+                                      institute,phone,alternativephone,email,alternativeemail,
+                                     transectionid) 
+                                     VALUES 
+                                     ('$event_name','1','$team_name',
+                                     '$team_leader_name','$team_leader_roll','$team_leader_dept',";
+                                    
+                                    for ($i=0; $i < $maxteammember; $i++) { 
+                                        $sql .= "'".$member_name_value[$i]."', ";
+                                        $sql .= "'".$member_roll_value[$i]."', ";
+                                        $sql .= "'".$member_dept_value[$i]."', ";
+                                    }
 
+                                    $sql .="
+                                     '$instutute_name','$phone','$altphone','$email','$altemail',
+                                     '$transactionid') ";
 
-                                        } else {
-                                            echo "Error in File Uploading";
-                                        }
-                                    } else{
-                                        echo "File Size is too Big";
+                                    //echo $sql;
+                                    if (mysqli_query($con,$sql)) {
+                                        echo "Your Request have been submit Please wait for approve";
+                                    } else {
+                                        echo "Sorry Something Wrong in Database Please try Again";
                                     }
                                 }
                             }
 
+                            if ($transection_type == 2) {
+
+                            }
+
 
                         }
+
+
+
                     }
 
-                    // If Team Available And Single Member
-
-                    if ($result['teamon'] == '1' && $participation_type == 1) {
-                        if ($transection_type == 1) {
-                            # Text Value Input
-                        }
-                        if ($transection_type == 2) {
-                            # Image File Upload
-                        }
-                    }
-
-                    // Team Available and team selected
-                    
-                    if ($result['teamon'] == '1' && $participation_type == 2) {
-                        if ($transection_type == 1) {
-                            # Text Value Input
-                        }
-                        if ($transection_type == 2) {
-                            # Image File Upload
-                        }
-                    }
-                    
-
-                    
 
                 }
 
@@ -356,6 +307,7 @@
 
             if (ptype && ptypeValue == 0) {
                 optinDiv.innerHTML = '';
+                document.getElementById("submitbtn").disabled = true;
             } else if (ptype && ptypeValue == 1) {
                 // For single
                 optinDiv.innerHTML = optSingle;

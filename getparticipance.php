@@ -18,7 +18,7 @@ if (!empty($_POST["data"])) {
 <input type="hidden" name="maxteammember" value="<?php echo $result['maxteammember']; ?>">
 <div class="form-group">
     <label for="exampleInputEmail1">Participation Type</label>
-    <select class="form-control" required="1" name="event-name" onchange="setUserInputType()" id="ptype">
+    <select class="form-control" required="1" name="participation_type" onchange="setUserInputType()" id="ptype">
         <option value="0">Select Participation Type</option>
         <option value="1">Single</option>
         <option value="2">Team</option>
