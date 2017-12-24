@@ -27,19 +27,17 @@
 <body>
 
     <div class="login">
-        <div class="login-bottom">
-            <h2>Login</h2>
-			<?php
+    <?php
 				if (isset($_POST['submit'])) {
 					include '../inc/conn.php';
 					
 					$email = $_POST['email'];
 					$password = $_POST['password'];
 
-					$sql = "SELECT id FROM admin";
+					$sql = "SELECT id FROM admin WHERE email = '$email' AND password ='$password'";
 					$result = mysqli_query($con,$sql);
-					$result = mysqli_num_rows($result);
-					if ($result) {
+                    $have_user = mysqli_num_rows($result);
+					if ($have_user > 0) {
 						session_start();
 						$_SESSION['login'] = 1;
 			            header('Location: index.php');
@@ -50,6 +48,9 @@
 				}
 
 			?>
+        <div class="login-bottom">
+            <h2>Login</h2>
+			
             <form action="" method="post">
                 <div class="col-md-6">
                     <div class="login-mail">
