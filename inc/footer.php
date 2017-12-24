@@ -55,7 +55,7 @@
                     <div class="single-event">
                         <img src="<?php echo $single_model['promoimg']; ?>" alt="<?php echo $single_model['events']; ?>">
                         <div class="right">
-                            <h3><?php echo $single_model['events']; ?></h3>
+                            <h3 class="model-header"><?php echo $single_model['events']; ?></h3>
                             <?php if ($single_model['reg_active'] == 1) { ?>
                             <a class="btn btn-success" href="participate.php">Register</a>
                             <?php } ?>

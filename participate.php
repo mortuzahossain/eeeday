@@ -133,7 +133,74 @@
                             }
 
                             if ($transection_type == 2) {
+                                
+                                $file_name = $file['name'];
+                                $file_tmp = $file['tmp_name'];
+                                $file_size = $file['size'];
+                                $file_error = $file['error'];
 
+                                // File Extention
+                                $file_extention = explode('.', $file_name);
+                                $file_extention = strtolower(end($file_extention));
+
+                                // Allowed File Type
+                                $allowed = array('gif','jpg','png');
+                                define('ROOTPATH', __DIR__);
+
+                                if (in_array($file_extention,$allowed)) {
+                                    if ($file_error === 0) {
+                                        if ($file_size <= 100000000) {
+                                            $file_name_new = uniqid('',true). '.' .$file_extention;
+                                            // In Server Where Want to save the file
+                                            $file_destinition = ROOTPATH.'/img/bankrecept/'.$file_name_new;
+                                            //echo $file_destinition;
+                                            //echo $file_destinition;
+                                            if (move_uploaded_file($file_tmp, $file_destinition)) {
+                                                # Save Data In Database
+                                                #echo $file_destinition;
+
+                                                $sql = "INSERT INTO participance2018
+                                                 (eventslug,participationtype,teamname,
+                                                 teamleadername,teamleaderroll,teamleaderdept,
+                                                 ";
+                                                for ($i=0; $i < $maxteammember; $i++) { 
+                                                    $sql .= $member_name_db[$i].', ';
+                                                    $sql .= $member_roll_db[$i].', ';
+                                                    $sql .= $member_dept_db[$i].', ';
+                                                }
+                                                 $sql .= "
+                                                  institute,phone,alternativephone,email,alternativeemail,
+                                                 transectionimg) 
+                                                 VALUES 
+                                                 ('$event_name','1','$team_name',
+                                                 '$team_leader_name','$team_leader_roll','$team_leader_dept',";
+                                                
+                                                for ($i=0; $i < $maxteammember; $i++) { 
+                                                    $sql .= "'".$member_name_value[$i]."', ";
+                                                    $sql .= "'".$member_roll_value[$i]."', ";
+                                                    $sql .= "'".$member_dept_value[$i]."', ";
+                                                }
+
+                                                $sql .="
+                                                 '$instutute_name','$phone','$altphone','$email','$altemail',
+                                                 '$file_name_new') ";
+
+                                                //echo $sql;
+                                                if (mysqli_query($con,$sql)) {
+                                                    echo "Your Request have been submit Please wait for approve";
+                                                } else {
+                                                    echo "Sorry Something Wrong in Database Please try Again";
+                                                }
+
+
+                                            } else {
+                                                echo "Error in File Uploading";
+                                            }
+                                        } else{
+                                            echo "File Size is too Big";
+                                        }
+                                    }
+                                }
                             }
 
 
