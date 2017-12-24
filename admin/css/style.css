@@ -2840,3 +2840,11 @@ ul.dropdown-menu.dropdown-menu-right {
     font-size: 1.6em;
 }
 }
+
+.addadminbtn{
+  width: auto;
+}
+.heading {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}

@@ -34,7 +34,7 @@
                 }
 
             } else {
-                echo 'No data available to show.';
+                echo 'No Sponsors available to show.';
             }
         } else {
             echo 'Problem in Database';
