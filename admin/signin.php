@@ -34,7 +34,7 @@
 					$email = $_POST['email'];
 					$password = $_POST['password'];
 
-					$sql = "SELECT id FROM admin WHERE email = '$email' AND password ='$password'";
+					$sql = "SELECT id FROM admin WHERE email = '$email' AND password ='$password' and status = 1";
 					$result = mysqli_query($con,$sql);
                     $have_user = mysqli_num_rows($result);
 					if ($have_user > 0) {
