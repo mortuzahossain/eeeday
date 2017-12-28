@@ -26,9 +26,23 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a data-toggle="modal" data-target="#ourevents">Events</a></li>
-            <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Schedule</a></li>
+<?php
+    if ($con) {
+        $sql = "SELECT content FROM contents WHERE slug ='schedule'";
+        $schedule = mysqli_query($con,$sql)->fetch_assoc();
+    }
+?>
+            <li><a target="_blank" href="<?php echo $schedule['content']; ?>">Schedule</a></li>
             <li><a href="teams.php">Teams</a></li>
-            <li><a target="_blank" href="file/schedule/techhunt_2017_schedule_v1.pdf">Results</a></li>
+
+<?php
+    if ($con) {
+        $sql = "SELECT content FROM contents WHERE slug ='results'";
+        $results = mysqli_query($con,$sql)->fetch_assoc();
+    }
+?>
+
+            <li><a target="_blank" href="<?php echo $results['content'] ?>">Results</a></li>
             <li><a href="sponsors.php">Sponsors</a></li>
             <li><a data-toggle="modal" data-target="#contact-us" href="#">Contact</a></li>
         </ul>

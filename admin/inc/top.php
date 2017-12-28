@@ -4,7 +4,7 @@
 	 	header('Location: signin.php');
 	    exit();
 	}
-	include '../../inc/conn.php';
+	include '../inc/conn.php';
 ?>
 
 <!DOCTYPE HTML>

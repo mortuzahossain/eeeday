@@ -68,7 +68,7 @@
 					<td width="5%"><?php echo $i; ?></td>
 					<td width="20%"><?php echo $admin['name']; ?></td>
 					<td width="25%"><?php echo $admin['email']; ?></td>
-					<td width="20%">123456</td>
+					<td width="20%"><?php echo $admin['password']; ?></td>
 					<td width="15%"><a href="delete.php?id=<?php echo $admin['id']; ?>" class="hvr-shutter-in-horizontal btn btn-danger addadminbtn">Delete</a></td>
 
 					<?php if ($admin['status'] == 0) { ?>
