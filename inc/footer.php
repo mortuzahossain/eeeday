@@ -18,8 +18,20 @@
         <p>Developer <a href="http://www.facebook.com/mdmortuza.hossain/">Md. Mortuza Hossain</a></p>
     </div>
 
+<?php
+    // For show the previous data
+    if ($con) {
+        $sql = "SELECT content FROM contents WHERE slug ='copyright_text'";
+        $result = mysqli_query($con,$sql)->fetch_assoc();
+        //var_dump($result);
+    }
+
+?>
+
     <div class="copyright text-center">
-        <p>All &copy; Received by EEE BAUST </p>
+        <p><?php if (!empty($result['content'])) {
+            echo $result['content'];
+        } ?></p>
     </div>
     
 
