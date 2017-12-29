@@ -48,7 +48,9 @@
 
 </table>
 
-<?php } ?>
+<?php } else {
+  echo "NO DATA SAVED YET";
+} ?>
 
 <?php
     include('inc/bottom.php');
