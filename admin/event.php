@@ -61,6 +61,7 @@
           <?php } ?>
 
           <td width="10%"><a href="editevent.php?id=<?php echo $event['id']; ?>" class="btn btn-success mybun">Edit</a></td>
+          <td width="10%"><a href="deleteevent.php?id=<?php echo $event['id']; ?>" class="btn btn-danger mybun">Delete</a></td>
 
       </tr>
 <?php } ?>
