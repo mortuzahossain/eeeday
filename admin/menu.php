@@ -17,6 +17,7 @@
 		}
 		
 	}
+	
 	// For show the previous data
 	if ($con) {
 		$sql = "SELECT content FROM contents WHERE slug ='schedule'";

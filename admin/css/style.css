@@ -2848,3 +2848,33 @@ ul.dropdown-menu.dropdown-menu-right {
     margin-bottom: 25px;
     margin-top: 25px;
 }
+
+
+.padding20 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+.mybun {
+    margin-right: 0px;
+    padding: 1px 14px;
+}
+
+.accepted p {
+    margin: auto;
+    border: 2px solid green;
+    border-radius: 15px 0;
+}
+
+.rejected p {
+    margin: auto;
+    border: 2px solid red;
+    border-radius: 15px 0;
+}
+
+.pending p {
+    margin: auto;
+    border: 2px solid blue;
+    border-radius: 15px 0;
+}
