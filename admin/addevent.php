@@ -34,7 +34,7 @@
   				//echo $file_destinition;
   				if (move_uploaded_file($file_tmp, $file_destinition)) {
             $sql = "INSERT INTO event2018 ( events, slug, reg_active, promoimg, pdflink, teamon, maxteammember) VALUES
-                ('$name','$slug','$regstatus','$filelocation','$pdflink','$teamon','$maxteammember')";
+                ('$name','$slug','$regstatus','$file_name_new','$pdflink','$teamon','$maxteammember')";
                 if (mysqli_query($con,$sql)) {
                     echo "Event Is Added Sucessflly";
                 } else {
@@ -52,8 +52,6 @@
   	} else {
       echo "File Format Not allowed . Please Provide Right File .";
     }
-
-
   }
 ?>
 

@@ -45,7 +45,7 @@
           <td>Deactive</td>
           <?php } ?>
 
-          <td><a href="<?php echo $event['promoimg']; ?>" target="_blank" class="btn btn-success mybun">See Image</a></td>
+          <td><a href="admin/img/events/<?php echo $event['promoimg']; ?>" target="_blank" class="btn btn-success mybun">See Image</a></td>
 
           <?php if ($event['teamon'] == 1) { ?>
           <td>Yes</td>
