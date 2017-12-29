@@ -30,7 +30,7 @@
           <td><?php echo $event['name']; ?></td>
           <td><a href="<?php echo $event['image']; ?>" target="_blank" class="btn btn-success mybun">Image</a></td>
           <td><a href="<?php echo $event['website']; ?>" target="_blank" class="btn btn-success mybun">Website</a></td>
-          <td width="10%"><a href="editsponsor.php?id=<?php echo $event['id']; ?>" class="btn btn-success mybun">Edit</a></td>
+          <td width="10%"><a href="editsponsor.php?id=<?php echo $event['id']; ?>" class="btn btn-success mybun">Update</a></td>
       </tr>
 <?php } ?>
 </table>
