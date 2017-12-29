@@ -81,6 +81,10 @@
                             </li>
 
                             <li>
+                                <a href="event.php" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Events</span> </a>
+                            </li>
+
+                            <li>
                                 <a href="footer.php" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Footer</span> </a>
                             </li>
 

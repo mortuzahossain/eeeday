@@ -43,7 +43,7 @@
                 <p>Rejected</p>
             </td>
             <?php } ?>
-            <td width="10%"><a href="details.php?id=<?php echo $key['id']; ?>" target="_blank" class="btn btn-success mybun">Details</a></td>
+            <td width="10%"><a href="details.php?id=<?php echo $key['id']; ?>" class="btn btn-success mybun">Details</a></td>
         </tr>       
 <?php } ?>
 	</table>
