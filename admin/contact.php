@@ -40,9 +40,8 @@
           <td><?php echo $data['phone']; ?></td>
           <td><?php echo $data['email']; ?></td>
           <td><a href="<?php echo $data['image']; ?>" target="_blank" class="btn btn-success mybun">Image</a></td>
-          <td width="10%"><a href="editcontact.php?id=<?php echo $event['id']; ?>" class="btn btn-success mybun">Edit</a></td>
-          <td width="10%"><a href="deletecontact.php?id=<?php echo $event['id']; ?>" class="btn btn-danger mybun">Delete</a></td>
-
+          <td width="10%"><a href="editcontact.php?id=<?php echo $data['id']; ?>" class="btn btn-success mybun">Edit</a></td>
+          <td width="10%"><a href="deletecontact.php?id=<?php echo $data['id']; ?>" class="btn btn-danger mybun">Delete</a></td>
       </tr>
 <?php } ?>
 
