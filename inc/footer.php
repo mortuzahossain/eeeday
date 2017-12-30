@@ -25,7 +25,6 @@
         $result = mysqli_query($con,$sql)->fetch_assoc();
         //var_dump($result);
     }
-
 ?>
 
     <div class="copyright text-center">
@@ -33,7 +32,7 @@
             echo $result['content'];
         } ?></p>
     </div>
-    
+
 
 <!-- Model Data For Events -->
 
@@ -65,7 +64,7 @@
                     ?>
 
                     <div class="single-event">
-                        <img src="<?php echo $single_model['promoimg']; ?>" alt="<?php echo $single_model['events']; ?>">
+                        <img src="admin/img/events/<?php echo $single_model['promoimg']; ?>" alt="<?php echo $single_model['events']; ?>">
                         <div class="right">
                             <h3 class="model-header"><?php echo $single_model['events']; ?></h3>
                             <?php if ($single_model['reg_active'] == 1) { ?>
@@ -88,7 +87,7 @@
 
 
         ?>
-        
+
 
      </div>
     </div><!-- /.modal-content -->
@@ -134,7 +133,7 @@
                     <p><?php echo $single_contact['email']; ?></p>
                 </div>
             </div>
-            
+
             <?php
                     }
 
@@ -158,12 +157,18 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/jquery.plugin.js"></script> 
+    <script src="js/jquery.plugin.js"></script>
     <script src="js/jquery.countdown.js"></script>
     <script src="js/backtotop.js"></script>
-    
+
+
+    <?php
+        // For show the previous data
+        if ($countdownonoff['content'] == '1') {
+    ?>
+
     <script type="text/javascript">
-      
+
       $(document).ready(function(){
 
 
@@ -180,6 +185,7 @@
       });
     </script>
 
+  <?php } ?>
 
 </body>
 <html>

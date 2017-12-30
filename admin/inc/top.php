@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	if( !isset($_SESSION['login'])){
 	 	header('Location: signin.php');
@@ -78,6 +78,10 @@
 
                             <li>
                                 <a href="menu.php" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Menus</span> </a>
+                            </li>
+
+                            <li>
+                                <a href="event.php" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Events</span> </a>
                             </li>
 
                             <li>

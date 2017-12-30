@@ -30,12 +30,12 @@
                         <div class="panel-heading" role="tab" id="headingOne">
 
                             <div class="single-event">
-                                <img src="<?php echo $single_event['promoimg']; ?>" alt="">
+                                <img src="admin/img/events/<?php echo $single_event['promoimg']; ?>" alt="">
                                 <div class="right">
                                     <h3><?php echo $single_event['events'] ?></h3>
 <?php if($single_event['reg_active'] == 1){ ?>
                                     <a class="btn btn-success" href="participate.php">Register</a>
-<?php } ?>                                    
+<?php } ?>
                                     <a class="btn btn-success" target="_blank" href="<?php echo $single_event['pdflink']; ?>">Event Details</a>
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" aria-expanded="false" aria-controls="collapse<?php echo $i; ?>" class="btn btn-success">Show Teams</a>
                                 </div>
@@ -58,7 +58,7 @@
             while($row = mysqli_fetch_assoc($result)){
                 $participance[] = $row;
             }
-            
+
             ?>
             <h3>Single</h3>
 
@@ -69,7 +69,7 @@
                                     <td width="40%">Institution Name</td>
                                     <td width="10%">Status</td>
                                     <td width="10%">Details</td>
-                                </tr>           
+                                </tr>
             <?php
             $serial_no = 0;
             foreach ($participance as $single_particippance) {
@@ -102,7 +102,7 @@
             $participance = [];
 
             ?>
-            
+
                                 </table>
             <?php
 
@@ -131,7 +131,7 @@
             while($row = mysqli_fetch_assoc($result)){
                 $participance[] = $row;
             }
-            
+
             ?>
             <h3>Team</h3>
 
@@ -142,7 +142,7 @@
                                     <td width="40%">Institution Name</td>
                                     <td width="10%">Status</td>
                                     <td width="10%">Details</td>
-                                </tr>           
+                                </tr>
             <?php
             $serial_no = 0;
             foreach ($participance as $single_particippance) {
@@ -175,7 +175,7 @@
             $participance = [];
 
             ?>
-            
+
                                 </table>
             <?php
 

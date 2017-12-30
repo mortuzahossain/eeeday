@@ -2,6 +2,18 @@
     include 'inc/header.php';
 ?>
 
+<?php
+
+if ($con) {
+    $sql = "SELECT content FROM contents WHERE slug ='countdown'";
+    $countdownonoff = mysqli_query($con,$sql)->fetch_assoc();
+    //var_dump($countdownonoff);
+}
+
+if ($countdownonoff['content'] == '1') {
+
+?>
+
 
     <div class="event-counter">
         <div class="container">
@@ -17,7 +29,7 @@
     </div>
 
 
-
+<?php } ?>
 
     <div class="block">
         <div class="container">
