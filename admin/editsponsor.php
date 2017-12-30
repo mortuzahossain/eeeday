@@ -13,9 +13,9 @@
 <?php
 
 if (isset($_POST['save'])) {
-  $name = $_POST['name'];
-  $sponsorsurl = $_POST['sponsorsurl'];
-  $sponsorslogo = $_POST['sponsorslogo'];
+  $name = addslashes($_POST['name']);
+  $sponsorsurl = addslashes($_POST['sponsorsurl']);
+  $sponsorslogo = addslashes($_POST['sponsorslogo']);
   $sql = "UPDATE sponsors2018 SET name ='$name' , image = '$sponsorslogo' , website = '$sponsorsurl' WHERE id = $id";
   if (mysqli_query($con, $sql)) {
     echo "Data Updated Successfully . Please Go Back And See.";

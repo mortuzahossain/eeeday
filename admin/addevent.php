@@ -4,13 +4,13 @@
 
 <?php
   if (isset($_POST['save'])) {
-    $name = $_POST['name'];
-    $slug = strtolower(str_replace(' ', '', $name));
-    $regstatus = $_POST['regstatus'];
+    $name = addslashes($_POST['name']);
+    $slug = addslashes(strtolower(str_replace(' ', '', $name)));
+    $regstatus = addslashes($_POST['regstatus']);
     $file = $_FILES['file'];
-    $pdflink = $_POST['pdflink'];
-    $teamon = $_POST['teamon'];
-    $maxteammember = $_POST['maxteammember'];
+    $pdflink = addslashes($_POST['pdflink']);
+    $teamon = addslashes($_POST['teamon']);
+    $maxteammember = addslashes($_POST['maxteammember']);
 
     // For Files Upload
     $file_name = $file['name'];

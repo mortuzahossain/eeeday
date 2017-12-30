@@ -4,11 +4,11 @@
 
 <?php
   if (isset($_POST['save'])) {
-    $name         = $_POST['name'];
-    $designation  = $_POST['designation'];
-    $phone        = $_POST['phone'];
-    $email        = $_POST['email'];
-    $image        = $_POST['image'];
+    $name         = addslashes($_POST['name']);
+    $designation  = addslashes($_POST['designation']);
+    $phone        = addslashes($_POST['phone']);
+    $email        = addslashes($_POST['email']);
+    $image        = addslashes($_POST['image']);
 
     $sql = "INSERT INTO contact2018 (name, designation, phone, email, image) VALUES ('$name','$designation','$phone','$email','$image')";
 

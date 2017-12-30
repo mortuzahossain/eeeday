@@ -25,7 +25,6 @@
         $result = mysqli_query($con,$sql)->fetch_assoc();
         //var_dump($result);
     }
-
 ?>
 
     <div class="copyright text-center">
@@ -162,6 +161,12 @@
     <script src="js/jquery.countdown.js"></script>
     <script src="js/backtotop.js"></script>
 
+
+    <?php
+        // For show the previous data
+        if ($countdownonoff['content'] == '1') {
+    ?>
+
     <script type="text/javascript">
 
       $(document).ready(function(){
@@ -180,6 +185,7 @@
       });
     </script>
 
+  <?php } ?>
 
 </body>
 <html>

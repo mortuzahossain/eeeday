@@ -12,11 +12,11 @@
 
 <?php
   if (isset($_POST['save'])) {
-    $name         = $_POST['name'];
-    $designation  = $_POST['designation'];
-    $phone        = $_POST['phone'];
-    $email        = $_POST['email'];
-    $image        = $_POST['image'];
+    $name         = addslashes($_POST['name']);
+    $designation  = addslashes($_POST['designation']);
+    $phone        = addslashes($_POST['phone']);
+    $email        = addslashes($_POST['email']);
+    $image        = addslashes($_POST['image']);
 
     $sql = "UPDATE contact2018 SET name = '$name', designation = '$designation', phone = '$phone', email = '$email', image='$image' WHERE id = $id";
 

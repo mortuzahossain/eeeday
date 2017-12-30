@@ -5,9 +5,9 @@
 
 <?php
   if (isset($_POST['save'])) {
-    $name = $_POST['name'];
-    $sponsorsurl = $_POST['sponsorsurl'];
-    $sponsorslogo = $_POST['sponsorslogo'];
+    $name = addslashes($_POST['name']);
+    $sponsorsurl = addslashes($_POST['sponsorsurl']);
+    $sponsorslogo = addslashes($_POST['sponsorslogo']);
 
     $sql = "INSERT INTO sponsors2018 (name, image, website) VALUES ('$name','$sponsorslogo','$sponsorsurl')";
 
