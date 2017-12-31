@@ -78,7 +78,7 @@
             <td><?php echo $serialno; ?></td>
             <td><?php echo $socialicon['name']; ?></td>
             <td><a href="<?php echo $socialicon['link']; ?>" target="_blank" class="btn btn-success mybun">View</a></td>
-            <td><i class="fa <?php echo $socialicon['iconname'];  ?>" aria-hidden="true"></i></td>
+            <td width='10%'><i class=" fa <?php echo $socialicon['iconname'];  ?> myicon" aria-hidden="true"></i></td>
             <td><a href="editsocialicon.php?id=<?php echo $socialicon['id']; ?>" class="btn btn-success mybun">Edit</a></td>
             <td><a href="deletesocialicon.php?id=<?php echo $socialicon['id']; ?>" class="btn btn-danger mybun">Delete</a></td>
         </tr>

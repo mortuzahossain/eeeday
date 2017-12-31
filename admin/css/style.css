@@ -2891,3 +2891,10 @@ textarea.form-control1 {
   color: #000;
   background: #ff0;
 }
+
+.myicon{
+font-size: 15px !important;
+width: 38%  !important;
+text-align: center !important;
+height: 26px !important;
+}
