@@ -32,8 +32,9 @@ if ($countdownonoff['content'] == '1') {
 <?php } ?>
 
 <?php
-  $abouteeeday_heading = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
-  $abouteeeday_content = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
+  $abouteeeday_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
+  $abouteeeday_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
+  $abouteeeday_video = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_video'")->fetch_assoc();
 ?>
 
 
@@ -46,7 +47,7 @@ if ($countdownonoff['content'] == '1') {
                 </div>
                 <div class="col-md-6">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wxVweqiz5qs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php if(!empty($abouteeeday_video['content'])) {echo $abouteeeday_video['content'];}else { echo "Vg2T81HbxXk" ;} ?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
