@@ -1,6 +1,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET time_zone = "+00:06";
+
 
 CREATE TABLE `admin` (
   `id` int(10) NOT NULL,
@@ -26,6 +27,24 @@ CREATE TABLE `contents` (
   `content` longtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
+INSERT INTO `contents` (`slug`, `content`) VALUES
+('abouteeeday_content', 'Department of Electrical and Electronic Engineering is going to celebrate â€œEEE Day 2017â€ with great zeal and festivities at Bangladesh Army University of Science and Technology (BAUST, Saidpur Cantonment on 23-25 January, 2018. The whole program consists of National Idea Contest, RoboRun, Project Show, Tech Quiz, Motivational speech, Workshops and Grand Concert. Students from different reputed universities from all over Bangladesh along with students from all departments of Bangladesh Army University of Science and Technology (BAUST) will attend the program. Famous personalities of Bangladesh will attend the program as honored guests and judges.'),
+('abouteeeday_heading', 'About EEE Day'),
+('abouteeeday_video', 'Vg2T81HbxXk'),
+('abouteeesociety_content', 'Department of Electrical and Electronic Engineering is going to celebrate â€œEEE Day 2017â€ with great zeal and festivities at Bangladesh Army University of Science and Technology (BAUST, Saidpur Cantonment on 23-25 January, 2018. The whole program consists of National Idea Contest, RoboRun, Project Show, Tech Quiz, Motivational speech, Workshops and Grand Concert. Students from different reputed universities from all over Bangladesh along with students from all departments of Bangladesh Army University of Science and Technology (BAUST) will attend the program. Famous personalities of Bangladesh will attend the program as honored guests and judges.'),
+('abouteeesociety_heading', 'About EEE SocietyA'),
+('copyright_text', 'All Â© Received by EEE BAUST'),
+('countdown', '1'),
+('countdown_day', '24'),
+('countdown_month', '01'),
+('countdown_year', '2018'),
+('results', 'https://drive.google.com/open?id=1P3CpyG0S3ixTj8gnnZJJlbo0DXxZso6BLieLga6VUJk'),
+('schedule', 'https://drive.google.com/open?id=1P3CpyG0S3ixTj8gnnZJJlbo0DXxZso6BLieLga6VUJk');
+
+
+
 CREATE TABLE `event2018` (
   `id` int(10) NOT NULL,
   `events` varchar(500) NOT NULL,
@@ -36,6 +55,7 @@ CREATE TABLE `event2018` (
   `teamon` int(2) NOT NULL,
   `maxteammember` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 CREATE TABLE `participance2018` (
@@ -80,7 +100,6 @@ CREATE TABLE `sociallinks` (
   `iconname` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 CREATE TABLE `sponsors2018` (
   `id` int(10) NOT NULL,
   `name` varchar(1000) NOT NULL,
@@ -92,42 +111,24 @@ CREATE TABLE `sponsors2018` (
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
+
 ALTER TABLE `contact2018`
   ADD PRIMARY KEY (`id`);
+
 
 ALTER TABLE `contents`
   ADD PRIMARY KEY (`slug`);
 
+
 ALTER TABLE `event2018`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `participance2018`
   ADD PRIMARY KEY (`id`);
 
+
 ALTER TABLE `sociallinks`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `sponsors2018`
   ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `contact2018`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `event2018`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `participance2018`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `sociallinks`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `sponsors2018`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
-
-INSERT INTO `contents` (`slug`, `content`) VALUES
-('copyright_text', 'All Â© Received by EEE BAUST'),
-('countdown', '0'),
-('results', 'http://localhost/eeeday/file/schedule/techhunt_2017_schedule_v1.pdf'),
-('schedule', 'http://localhost/eeeday/file/schedule/techhunt_2017_schedule_v1.pdf');
