@@ -105,7 +105,7 @@
         <h4 class="modal-title">Contact With Us</h4>
       </div>
       <div class="modal-body">
-    <p><marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">Need to change your team info then <a href="#">mail me</a>.</marquee></p>
+    <!-- <p><marquee behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">Need to change your team info then <a href="#">mail me</a>.</marquee></p> -->
 
     <?php
 

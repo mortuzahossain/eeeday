@@ -145,6 +145,58 @@
   	</form>
   	</div>
 
+<!-- For EEE Association  -->
+<div class="clearfix"> </div>
+
+
+<?php
+  if (isset($_POST['abouteeesociety'])) {
+    $abouteeesociety_heading = addslashes($_POST['abouteeesociety_heading']);
+    $abouteeesociety_content = addslashes($_POST['abouteeesociety_content']);
+    // $abouteeesociety_video = addslashes($_POST['abouteeesociety_video']);
+
+    $sql1 = "UPDATE contents SET content='$abouteeesociety_heading' WHERE slug ='abouteeesociety_heading'";
+    $sql2 = "UPDATE contents SET content='$abouteeesociety_content' WHERE slug ='abouteeesociety_content'";
+    // $sql3 = "UPDATE contents SET content='$abouteeeday_video' WHERE slug ='abouteeesociety_video'";
+
+    if (mysqli_query($con,$sql1) AND mysqli_query($con,$sql2)) {
+			echo "Data Update Sucessfully";
+		} else {
+			echo "Error Please Try Again";
+		}
+
+  }
+
+  $abouteeesociety_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_heading'")->fetch_assoc();
+  $abouteeesociety_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_content'")->fetch_assoc();
+
+  //var_dump($abouteeesociety_heading);
+?>
+
+
+  	<div class="grid-form1">
+  	<h3 id="forms-horizontal"># About EEE Society</h3>
+  	<form class="form-horizontal" action="" method="post">
+      <div class="form-group">
+        <label class="col-sm-2 control-label hor-form">Heading</label>
+        <div class="col-sm-10">
+          <input type="text" name="abouteeesociety_heading" class="form-control" value="<?php echo $abouteeesociety_heading['content']; ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label hor-form">Content</label>
+        <div class="col-sm-10">
+          <textarea name="abouteeesociety_content"  class="form-control1" cols="50" rows="10"><?php echo $abouteeesociety_content['content']; ?></textarea>
+        </div>
+      </div>
+  	  <div class="form-group">
+  	    <div class="col-sm-offset-2 col-sm-10">
+  	      <button type="submit" class="btn btn-default" name="abouteeesociety">Save</button>
+  	    </div>
+  	  </div>
+  	</form>
+  	</div>
+
 
 <hr>
 <?php
