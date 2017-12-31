@@ -1,18 +1,27 @@
 
-
+<?php
+  $sql = "SELECT link,iconname FROM sociallinks";
+  $result = mysqli_query($con,$sql);
+  $have_social_icon = mysqli_num_rows($result);
+  if ($have_social_icon > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $all_social_icon[] = $row;
+    }
+?>
 
     <div class="social-link text-center">
         <div class="container">
             <div class="row">
                 <div class="w3-xlarge w3-padding-32">
-                    <a href="#" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"> &nbsp; </i></a>
-                    <a href="#" target="_blank"><i class="fa fa-globe w3-hover-opacity"> &nbsp; </i></a>
-                    <a href="#" target="_blank"><i class="fa fa-map-marker w3-hover-opacity"> &nbsp; </i></a>
+                  <?php foreach ($all_social_icon as $key) { ?>
+                    <a href="<?php echo $key['link']; ?>" target="_blank"><i class="fa <?php echo $key['iconname']; ?> w3-hover-opacity"> &nbsp; </i></a>
+                  <?php } ?>
                 </div>
             </div>
         </div>
     </div>
 
+<?php } ?>
 
     <div class="developer text-center">
         <p>Developer <a href="http://www.facebook.com/mdmortuza.hossain/">Md. Mortuza Hossain</a></p>
