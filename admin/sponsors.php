@@ -9,6 +9,7 @@
 <?php
   $sql = "SELECT * FROM sponsors2018 ORDER BY id DESC";
   $result = mysqli_query($con,$sql);
+  if($result){
   if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
       $all_events[] = $row;
@@ -38,7 +39,7 @@
 
 <?php } else {
   echo "No Sponsors added yet.";
-} ?>
+} }?>
 
 <hr>
 <?php

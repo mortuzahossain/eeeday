@@ -8,7 +8,6 @@
 
 	if (isset($_POST['saveschedule'])) {
 		$schedule = addslashes($_POST['schedule']);
-
 		$updatequery = "UPDATE contents SET content='$schedule' WHERE slug ='schedule'";
 		if (mysqli_query($con,$updatequery)) {
 			echo "Data Update Sucessfully";
@@ -21,7 +20,9 @@
 	// For show the previous data
 	if ($con) {
 		$sql = "SELECT content FROM contents WHERE slug ='schedule'";
-		$schedule = mysqli_query($con,$sql)->fetch_assoc();
+		if(mysqli_query($con,$sql)){
+			$schedule = mysqli_query($con,$sql)->fetch_assoc();
+		}
 	}
 	
 
@@ -33,7 +34,7 @@
 	  <div class="form-group">
 	    <label for="schedule" class="col-sm-2 control-label hor-form">Schedule</label>
 	    <div class="col-sm-10">
-	      <input type="text" name="schedule" class="form-control" id="schedule" value="<?php echo $schedule['content']; ?>">
+	      <input type="text" name="schedule" class="form-control" id="schedule" value="<?php if(!empty($schedule['content'])){ echo $schedule['content']; } ?>">
 	    </div>
 	  </div>
 	  <div class="form-group">

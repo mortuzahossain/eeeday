@@ -6,11 +6,9 @@
 
 if ($con) {
     $sql = "SELECT content FROM contents WHERE slug ='countdown'";
-    $countdownonoff = mysqli_query($con,$sql)->fetch_assoc();
-    //var_dump($countdownonoff);
-}
-
-if ($countdownonoff['content'] == '1') {
+    if(mysqli_query($con,$sql)){
+        $countdownonoff = mysqli_query($con,$sql)->fetch_assoc();
+        if ($countdownonoff['content'] == '1') {
 
 ?>
 
@@ -29,12 +27,14 @@ if ($countdownonoff['content'] == '1') {
     </div>
 
 
-<?php } ?>
+<?php } } } ?>
 
 <?php
-  $abouteeeday_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
-  $abouteeeday_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
-  $abouteeeday_video = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_video'")->fetch_assoc();
+  if(mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_heading'")){
+    $abouteeeday_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
+    $abouteeeday_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
+    $abouteeeday_video = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeeday_video'")->fetch_assoc();
+  }
 ?>
 
 
@@ -57,10 +57,10 @@ if ($countdownonoff['content'] == '1') {
 <!-- For EEE SOCIETY -->
 
 <?php
-
-$abouteeesociety_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_heading'")->fetch_assoc();
-$abouteeesociety_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_content'")->fetch_assoc();
-
+if(mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_heading'")){
+  $abouteeesociety_heading = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_heading'")->fetch_assoc();
+  $abouteeesociety_content = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'abouteeesociety_content'")->fetch_assoc();
+}
 ?>
 
     <div class="block block-1">

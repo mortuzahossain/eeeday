@@ -44,6 +44,7 @@
 		<?php
 			$sql = "SELECT * FROM admin";
 			$result = mysqli_query($con,$sql);
+			if($result){
 			$have_admin = mysqli_num_rows($result);
 			if ($have_admin) {
 				while($row = mysqli_fetch_assoc($result)){
@@ -82,7 +83,7 @@
 
 			<?php } ?>
 			</table>
-			<?php } ?>
+			<?php } } ?>
 		</div>
     </div>
 

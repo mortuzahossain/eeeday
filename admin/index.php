@@ -62,6 +62,7 @@
 </div>
 <div class="col-md-8 content-top-2 ">
 	<h1 class="padding20">All Participance</h1>
+	<hr>
 
 <?php 
     $sql = 'SELECT events , slug FROM event2018';

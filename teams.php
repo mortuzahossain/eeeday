@@ -99,7 +99,7 @@
 
             <?php
             }
-            $participance = [];
+            $participance = array();
 
             ?>
 
@@ -172,7 +172,7 @@
 
             <?php
             }
-            $participance = [];
+            $participance = array();
 
             ?>
 

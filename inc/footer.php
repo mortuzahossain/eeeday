@@ -2,6 +2,7 @@
 <?php
   $sql = "SELECT link,iconname FROM sociallinks";
   $result = mysqli_query($con,$sql);
+  if($result){
   $have_social_icon = mysqli_num_rows($result);
   if ($have_social_icon > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -21,7 +22,7 @@
         </div>
     </div>
 
-<?php } ?>
+<?php } } ?>
 
     <div class="developer text-center">
         <p>Developer <a href="http://www.facebook.com/mdmortuza.hossain/">Md. Mortuza Hossain</a></p>
@@ -31,15 +32,16 @@
     // For show the previous data
     if ($con) {
         $sql = "SELECT content FROM contents WHERE slug ='copyright_text'";
-        $result = mysqli_query($con,$sql)->fetch_assoc();
-        //var_dump($result);
+        if(mysqli_query($con,$sql)){
+            $result = mysqli_query($con,$sql)->fetch_assoc();
+        }
     }
 ?>
 
     <div class="copyright text-center">
         <p><?php if (!empty($result['content'])) {
             echo $result['content'];
-        } ?></p>
+        } else { echo "All Â© Received by EEE BAUST"; } ?></p>
     </div>
 
 
@@ -173,6 +175,7 @@
 
     <?php
         // For show the previous data
+    if(mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_year'")){
         if ($countdownonoff['content'] == '1') {
           $countdown_year = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_year'")->fetch_assoc();
           $countdown_month = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_month'")->fetch_assoc();
@@ -183,6 +186,7 @@
           $day = $countdown_day['content'];
 
           if (!empty($year) AND !empty($month) AND !empty($day)) {
+    
     ?>
 
     <script type="text/javascript">
@@ -203,7 +207,7 @@
       });
     </script>
 
-  <?php } }?>
+  <?php } } } ?>
 
 </body>
 <html>
