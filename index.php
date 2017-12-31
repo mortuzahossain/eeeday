@@ -31,12 +31,18 @@ if ($countdownonoff['content'] == '1') {
 
 <?php } ?>
 
+<?php
+  $abouteeeday_heading = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
+  $abouteeeday_content = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
+?>
+
+
     <div class="block">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>About EEE Day</h1>
-                    <p>Department of Electrical and Electronic Engineering is going to celebrate “EEE Day 2017” with great zeal and festivities at Bangladesh Army University of Science and Technology (BAUST, Saidpur Cantonment on 23-25 January, 2018. The whole program consists of National Idea Contest, RoboRun, Project Show, Tech Quiz, Motivational speech, Workshops and Grand Concert. Students from different reputed universities from all over Bangladesh along with students from all departments of Bangladesh Army University of Science and Technology (BAUST) will attend the program. Famous personalities of Bangladesh will attend the program as honored guests and judges.</p>
+                    <h1><?php if(!empty($abouteeeday_heading['content'])) {echo $abouteeeday_heading['content'];}else { echo "About EEE Day" ;} ?></h1>
+                    <p><?php if(!empty($abouteeeday_content['content'])) {echo $abouteeeday_content['content'];}else { echo "Department of Electrical and Electronic Engineering is going to celebrate “EEE Day 2017” with great zeal and festivities at Bangladesh Army University of Science and Technology (BAUST, Saidpur Cantonment on 23-25 January, 2018. The whole program consists of National Idea Contest, RoboRun, Project Show, Tech Quiz, Motivational speech, Workshops and Grand Concert. Students from different reputed universities from all over Bangladesh along with students from all departments of Bangladesh Army University of Science and Technology (BAUST) will attend the program. Famous personalities of Bangladesh will attend the program as honored guests and judges." ;} ?></p>
                 </div>
                 <div class="col-md-6">
                     <div class="embed-responsive embed-responsive-16by9">

@@ -12,6 +12,7 @@ $con = mysqli_connect($host,$user,$pass,$dbname);
 
 function validate($value)
 {
+    $value = addslashes($value);
     return $value;
 }
 

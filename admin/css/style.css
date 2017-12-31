@@ -2882,3 +2882,7 @@ ul.dropdown-menu.dropdown-menu-right {
     height: 180px;
     width: 100%;
 }
+
+textarea.form-control1 {
+    height: auto;
+}

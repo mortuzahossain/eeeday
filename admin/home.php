@@ -40,6 +40,53 @@
 	  </div>
 	</form>
 	</div>
+
+<?php
+  if (isset($_POST['abouteeeday'])) {
+    $abouteeeday_heading = addslashes($_POST['abouteeeday_heading']);
+    $abouteeeday_content = addslashes($_POST['abouteeeday_content']);
+
+    $sql1 = "UPDATE contents SET content='$abouteeeday_heading' WHERE slug ='abouteeeday_heading'";
+    $sql2 = "UPDATE contents SET content='$abouteeeday_content' WHERE slug ='abouteeeday_content'";
+
+    if (mysqli_query($con,$sql1) AND mysqli_query($con,$sql2)) {
+			echo "Data Update Sucessfully";
+		} else {
+			echo "Error Please Try Again";
+		}
+
+  }
+
+  $abouteeeday_heading = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_heading'")->fetch_assoc();
+  $abouteeeday_content = mysqli_query($con,"SELECT * FROM contents WHERE slug = 'abouteeeday_content'")->fetch_assoc();
+
+?>
+
+
+  	<div class="grid-form1">
+  	<h3 id="forms-horizontal"># About EEE Day</h3>
+  	<form class="form-horizontal" action="" method="post">
+      <div class="form-group">
+        <label class="col-sm-2 control-label hor-form">Heading</label>
+        <div class="col-sm-10">
+          <input type="text" name="abouteeeday_heading" class="form-control" value="<?php echo $abouteeeday_heading['content']; ?>">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label hor-form">Content</label>
+        <div class="col-sm-10">
+          <textarea name="abouteeeday_content"  class="form-control1" cols="50" rows="10"><?php echo $abouteeeday_content['content']; ?></textarea>
+        </div>
+      </div>
+  	  <div class="form-group">
+  	    <div class="col-sm-offset-2 col-sm-10">
+  	      <button type="submit" class="btn btn-default" name="abouteeeday">Save</button>
+  	    </div>
+  	  </div>
+  	</form>
+  	</div>
+
+
 <hr>
 <?php
     include('inc/bottom.php');
