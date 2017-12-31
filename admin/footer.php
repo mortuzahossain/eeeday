@@ -15,7 +15,7 @@
 		} else {
 			echo "Error Please Try Again";
 		}
-		
+
 	}
 	// For show the previous data
 	if ($con) {
@@ -23,7 +23,7 @@
 		$result = mysqli_query($con,$sql)->fetch_assoc();
 		//var_dump($result);
 	}
-	
+
 
 ?>
 
@@ -44,6 +44,52 @@
 	  </div>
 	</form>
 	</div>
+
+  <div class="container">
+    <a href="addsocialicon.php" class="hvr-shutter-in-horizontal btn btn-success addadminbtn">Add Social Icon</a>
+  </div>
+
+  <!--FOR Showing Available Social Icon  -->
+
+  <?php
+    $sql = "SELECT * FROM sociallinks ORDER BY id DESC";
+    $result = mysqli_query($con,$sql);
+    if (mysqli_num_rows($result) > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $allsocialicon[] = $row;
+      }
+
+      $serialno = 0;
+
+  ?>
+
+
+  <table class="table table-striped ">
+        <tr>
+            <td>SL</td>
+            <td>Name</td>
+            <td>Link</td>
+            <td>Icon Preview</td>
+        </tr>
+
+  <?php foreach ($allsocialicon as $socialicon) { $serialno++; ?>
+
+        <tr>
+            <td><?php echo $serialno; ?></td>
+            <td><?php echo $socialicon['name']; ?></td>
+            <td><a href="<?php echo $socialicon['link']; ?>" target="_blank" class="btn btn-success mybun">View</a></td>
+            <td><i class="fa <?php echo $socialicon['iconname'];  ?>" aria-hidden="true"></i></td>
+            <td><a href="editsocialicon.php?id=<?php echo $socialicon['id']; ?>" class="btn btn-success mybun">Edit</a></td>
+            <td><a href="deletesocialicon.php?id=<?php echo $socialicon['id']; ?>" class="btn btn-danger mybun">Delete</a></td>
+        </tr>
+  <?php } ?>
+
+  </table>
+
+  <?php } ?>
+
+
+
 <hr>
 <?php
     include('inc/bottom.php');
