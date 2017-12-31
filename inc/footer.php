@@ -165,6 +165,15 @@
     <?php
         // For show the previous data
         if ($countdownonoff['content'] == '1') {
+          $countdown_year = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_year'")->fetch_assoc();
+          $countdown_month = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_month'")->fetch_assoc();
+          $countdown_day = mysqli_query($con,"SELECT content FROM contents WHERE slug = 'countdown_day'")->fetch_assoc();
+
+          $year = $countdown_year['content'];
+          $month = $countdown_month['content'];
+          $day = $countdown_day['content'];
+
+          if (!empty($year) AND !empty($month) AND !empty($day)) {
     ?>
 
     <script type="text/javascript">
@@ -173,7 +182,7 @@
 
 
         $("#counter").countdown({
-        until: new Date(2018, 1 - 1, 23),
+        until: new Date(<?php echo $year; ?>, <?php echo $month; ?> - 1, <?php echo $day; ?>),
         format: 'dHMS'
         });
 
@@ -185,7 +194,7 @@
       });
     </script>
 
-  <?php } ?>
+  <?php } }?>
 
 </body>
 <html>
