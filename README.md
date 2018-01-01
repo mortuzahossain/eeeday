@@ -5,7 +5,7 @@ To Install this website you just have to go
 inc/constant.php 
 ```
 and provide your mysqli database information then 
-inport the 
+import the 
 ```
 database.sql
 ```
