@@ -1,10 +1,10 @@
 #wrapper {
     width: 100%;
 }
+
 #page-wrapper {
     /*--padding: 0 15px;--*/
     min-height: 568px;
-    
 }
 
 @media(min-width:768px) {
@@ -28,7 +28,6 @@
 
 .navbar-top-links li a {
     padding: 15px;
-  
 }
 
 .navbar-top-links .dropdown-menu li {
@@ -54,9 +53,11 @@
     width: 310px;
     min-width: 0;
 }
+
 .navbar-top-links .dropdown-messages {
     margin-left: 5px;
 }
+
 .navbar-top-links .dropdown-tasks {
     margin-left: -59px;
 }
@@ -78,6 +79,7 @@
 .sidebar .sidebar-search {
     padding: 15px;
 }
+
 .sidebar .arrow {
     float: right;
 }
@@ -95,7 +97,6 @@
     border-bottom: 0!important;
 }
 
-
 .sidebar .nav-third-level li a {
     padding-left: 52px;
 }
@@ -105,13 +106,10 @@
         z-index: 1;
         position: absolute;
         width: 250px;
-        
     }
-
     .navbar-top-links .dropdown-messages,
     .navbar-top-links .dropdown-tasks,
     .navbar-top-links .dropdown-alerts {
         margin-left: auto;
     }
 }
-

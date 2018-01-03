@@ -6,7 +6,8 @@
  * Made by Osman Nuri Okumus
  * Under MIT License
  */
-;(function($, window, document, undefined) {
+;
+(function($, window, document, undefined) {
 
     var pluginName = "metisMenu",
         defaults = {
@@ -73,8 +74,8 @@
 
             while (
                 div.innerHTML = "<!--[if gt IE " + (++v) + "]><i></i><![endif]-->",
-                    all[0]
-                ) {
+                all[0]
+            ) {
                 return v > 4 ? v : undef;
             }
         },
@@ -107,7 +108,7 @@
     };
 
     $.fn[pluginName] = function(options) {
-        this.each(function () {
+        this.each(function() {
             var el = $(this);
             if (el.data(pluginName)) {
                 el.data(pluginName).remove();
